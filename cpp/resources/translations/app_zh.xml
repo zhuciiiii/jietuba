@@ -7465,4 +7465,343 @@ Replace it?</source>
         <translation>复制的文件和文件夹，显示图标、名称和大小。</translation>
     </message>
 </context>
+
+<!-- ========== Recent Screenshot Batch Copy ========== -->
+<context>
+    <name>BatchCopy</name>
+    <message>
+        <source>Automatic screenshot saving is turned off. Batch copy uses the saved screenshot files, so turn on "Auto-save screenshots" in the Screenshot settings. Nothing has been changed for you.</source>
+        <translation>自动保存截图已关闭。批量复制使用已保存的截图文件，请在“截图”设置中打开自动保存。本功能没有替你修改任何设置。</translation>
+    </message>
+    <message>
+        <source>Batch Copy</source>
+        <translation>批量复制</translation>
+    </message>
+    <message>
+        <source>Batch Copy failed</source>
+        <translation>批量复制失败</translation>
+    </message>
+    <message>
+        <source>Batch copy is turned off. Turn on its master switch first.</source>
+        <translation>批量复制已关闭，请先打开它的总开关。</translation>
+    </message>
+    <message>
+        <source>No saved screenshots were found in the screenshot folder.</source>
+        <translation>截图文件夹中没有找到已保存的截图。</translation>
+    </message>
+    <message>
+        <source>No screenshots are selected. Select some in the Recent Screenshots window first.</source>
+        <translation>尚未选择截图，请先在“最近截图”窗口中选择。</translation>
+    </message>
+    <message>
+        <source>The screenshot files no longer exist.</source>
+        <translation>截图文件已不存在。</translation>
+    </message>
+    <message>
+        <source>Could not copy to the clipboard: </source>
+        <translation>无法复制到剪贴板：</translation>
+    </message>
+    <message>
+        <source>%1 screenshots copied. Press Ctrl+V to paste.</source>
+        <translation>已复制 %1 张截图，按 Ctrl+V 粘贴。</translation>
+    </message>
+    <message>
+        <source>Batch Copy (default count)</source>
+        <translation>批量复制（默认数量）</translation>
+    </message>
+    <message>
+        <source>Batch Copy Latest 5</source>
+        <translation>批量复制最近 5 张</translation>
+    </message>
+    <message>
+        <source>Batch Copy Latest 10</source>
+        <translation>批量复制最近 10 张</translation>
+    </message>
+    <message>
+        <source>Batch Copy Latest 15</source>
+        <translation>批量复制最近 15 张</translation>
+    </message>
+    <message>
+        <source>Batch Copy Latest 20</source>
+        <translation>批量复制最近 20 张</translation>
+    </message>
+    <message>
+        <source>Batch Copy Selected</source>
+        <translation>批量复制所选</translation>
+    </message>
+    <message>
+        <source>Screenshot</source>
+        <translation>截图</translation>
+    </message>
+    <message>
+        <source>Clipboard</source>
+        <translation>剪贴板</translation>
+    </message>
+    <message>
+        <source>Pin Clipboard Image</source>
+        <translation>贴图剪贴板图片</translation>
+    </message>
+    <message>
+        <source>Translation</source>
+        <translation>翻译</translation>
+    </message>
+    <message>
+        <source>Screen Annotation</source>
+        <translation>屏幕标注</translation>
+    </message>
+    <message>
+        <source>Recent Screenshots</source>
+        <translation>最近截图</translation>
+    </message>
+    <message>
+        <source>Copy Latest %1</source>
+        <translation>复制最近 %1 张</translation>
+    </message>
+    <message>
+        <source>Copy Selected</source>
+        <translation>复制所选</translation>
+    </message>
+    <message>
+        <source>Select Latest...</source>
+        <translation>选择最近…</translation>
+    </message>
+    <message>
+        <source>Clear Selection</source>
+        <translation>取消选择</translation>
+    </message>
+    <message>
+        <source>Refresh</source>
+        <translation>刷新</translation>
+    </message>
+    <message>
+        <source>Open Folder</source>
+        <translation>打开文件夹</translation>
+    </message>
+    <message>
+        <source>Batch Copy Settings</source>
+        <translation>批量复制设置</translation>
+    </message>
+    <message>
+        <source>Latest %1</source>
+        <translation>最近 %1 张</translation>
+    </message>
+    <message>
+        <source>Select All</source>
+        <translation>全选</translation>
+    </message>
+    <message>
+        <source>Batch copy is ON</source>
+        <translation>批量复制已开启</translation>
+    </message>
+    <message>
+        <source>Batch copy is OFF - no folder is watched, the hotkey is off and the clipboard is not touched.</source>
+        <translation>批量复制已关闭——不监视任何文件夹，热键不生效，也不会改动剪贴板。</translation>
+    </message>
+    <message>
+        <source>Turn Off</source>
+        <translation>关闭</translation>
+    </message>
+    <message>
+        <source>Turn On</source>
+        <translation>开启</translation>
+    </message>
+    <message>
+        <source>%1 selected, %2 shown</source>
+        <translation>已选 %1 张，共显示 %2 张</translation>
+    </message>
+</context>
+<context>
+    <name>SystemTray</name>
+    <message>
+        <source>Batch Copy</source>
+        <translation>批量复制</translation>
+    </message>
+    <message>
+        <source>Enable Batch Copy</source>
+        <translation>启用批量复制</translation>
+    </message>
+    <message>
+        <source>Copy Latest %1</source>
+        <translation>复制最近 %1 张</translation>
+    </message>
+    <message>
+        <source>Copy Selected</source>
+        <translation>复制所选</translation>
+    </message>
+    <message>
+        <source>Recent Screenshots...</source>
+        <translation>最近截图…</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsDialog</name>
+    <message>
+        <source>Batch Copy</source>
+        <translation>批量复制</translation>
+    </message>
+    <message>
+        <source>Batch Copy Settings</source>
+        <translation>批量复制设置</translation>
+    </message>
+    <message>
+        <source>Batch Copy Hotkeys</source>
+        <translation>批量复制热键</translation>
+    </message>
+    <message>
+        <source>Screenshot Source</source>
+        <translation>截图来源</translation>
+    </message>
+    <message>
+        <source>Batch Copy Master Switch</source>
+        <translation>批量复制总开关</translation>
+    </message>
+    <message>
+        <source>Off by default. While off, batch copy watches no folder, registers no hotkey and never changes the clipboard. jietuba's own features are not affected.</source>
+        <translation>默认关闭。关闭时批量复制不监视任何文件夹、不注册热键、不改动剪贴板，不影响截图吧自身的功能。</translation>
+    </message>
+    <message>
+        <source>Screenshot Monitoring</source>
+        <translation>截图监控</translation>
+    </message>
+    <message>
+        <source>Watch the screenshot folders so the Recent Screenshots window updates by itself. Needs the master switch.</source>
+        <translation>监视截图文件夹，使“最近截图”窗口自动更新。需要先打开总开关。</translation>
+    </message>
+    <message>
+        <source>Register the batch copy hotkeys below. Needs the master switch.</source>
+        <translation>注册下方的批量复制热键。需要先打开总开关。</translation>
+    </message>
+    <message>
+        <source>Batch Copy Notifications</source>
+        <translation>批量复制通知</translation>
+    </message>
+    <message>
+        <source>Tell me when screenshots were copied or copying failed.</source>
+        <translation>复制完成或失败时通知我。</translation>
+    </message>
+    <message>
+        <source>Default Batch Size</source>
+        <translation>默认批量数量</translation>
+    </message>
+    <message>
+        <source>How many screenshots the main hotkey and the tray entry copy.</source>
+        <translation>主热键和托盘菜单一次复制的截图数量。</translation>
+    </message>
+    <message>
+        <source>Recent Screenshot History</source>
+        <translation>最近截图历史</translation>
+    </message>
+    <message>
+        <source>How many recent screenshots the window lists.</source>
+        <translation>窗口中列出的最近截图数量。</translation>
+    </message>
+    <message>
+        <source>Windows Startup</source>
+        <translation>Windows 开机启动</translation>
+    </message>
+    <message>
+        <source>Batch copy runs inside jietuba, so it starts with jietuba. Launch on startup is set on the Other page.</source>
+        <translation>批量复制运行在截图吧内，随截图吧一起启动。开机启动请在“其他”页面设置。</translation>
+    </message>
+    <message>
+        <source>Open Other Settings</source>
+        <translation>打开“其他”设置</translation>
+    </message>
+    <message>
+        <source>Recent Screenshots</source>
+        <translation>最近截图</translation>
+    </message>
+    <message>
+        <source>Open the window with the latest screenshots, select some and copy them.</source>
+        <translation>打开显示最新截图的窗口，选择并复制。</translation>
+    </message>
+    <message>
+        <source>Open Window</source>
+        <translation>打开窗口</translation>
+    </message>
+    <message>
+        <source>Batch Copy Hotkey</source>
+        <translation>批量复制热键</translation>
+    </message>
+    <message>
+        <source>Copies the latest screenshots (the default count above) to the clipboard. Default: Ctrl+Shift+V.</source>
+        <translation>把最近的截图（上面的默认数量）复制到剪贴板。默认：Ctrl+Shift+V。</translation>
+    </message>
+    <message>
+        <source>Copy Latest 5</source>
+        <translation>复制最近 5 张</translation>
+    </message>
+    <message>
+        <source>Copy Latest 10</source>
+        <translation>复制最近 10 张</translation>
+    </message>
+    <message>
+        <source>Copy Latest 15</source>
+        <translation>复制最近 15 张</translation>
+    </message>
+    <message>
+        <source>Copy Latest 20</source>
+        <translation>复制最近 20 张</translation>
+    </message>
+    <message>
+        <source>Optional hotkey, empty by default.</source>
+        <translation>可选热键，默认为空。</translation>
+    </message>
+    <message>
+        <source>Copy Selected</source>
+        <translation>复制所选</translation>
+    </message>
+    <message>
+        <source>Copies the screenshots selected in the Recent Screenshots window. Optional, empty by default.</source>
+        <translation>复制在“最近截图”窗口中选中的截图。可选，默认为空。</translation>
+    </message>
+    <message>
+        <source>This key combination is invalid or reserved by the system.</source>
+        <translation>该组合键无效或被系统保留。</translation>
+    </message>
+    <message>
+        <source>Already used by: </source>
+        <translation>已被占用：</translation>
+    </message>
+    <message>
+        <source>Screenshot Folder</source>
+        <translation>截图文件夹</translation>
+    </message>
+    <message>
+        <source>Batch copy uses the screenshots jietuba saves automatically to this folder. Change it on the Screenshot page.</source>
+        <translation>批量复制使用截图吧自动保存到此文件夹的截图。可在“截图”页面更改。</translation>
+    </message>
+    <message>
+        <source>Automatic Saving</source>
+        <translation>自动保存</translation>
+    </message>
+    <message>
+        <source>Automatic screenshot saving is on.</source>
+        <translation>自动保存截图已开启。</translation>
+    </message>
+    <message>
+        <source>Automatic screenshot saving is OFF. Batch copy needs the saved screenshot files: turn on auto-save on the Screenshot page. Nothing was changed for you.</source>
+        <translation>自动保存截图已关闭。批量复制需要已保存的截图文件：请在“截图”页面打开自动保存。本功能没有替你修改任何设置。</translation>
+    </message>
+    <message>
+        <source>Extra Folders</source>
+        <translation>额外文件夹</translation>
+    </message>
+    <message>
+        <source>None. Screenshots saved elsewhere can be added here.</source>
+        <translation>无。保存在别处的截图可在此添加。</translation>
+    </message>
+    <message>
+        <source>Add Folder</source>
+        <translation>添加文件夹</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>清除</translation>
+    </message>
+    <message>
+        <source>Choose a screenshot folder</source>
+        <translation>选择截图文件夹</translation>
+    </message>
+</context>
 </TS>

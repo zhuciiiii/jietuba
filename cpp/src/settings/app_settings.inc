@@ -328,3 +328,20 @@ SETTING(preload_ocr, "app/preload_ocr", bool, true, Import, Gen, Gen)
 SETTING(preload_settings, "app/preload_settings", bool, true, Import, Gen, Gen)
 SETTING(preload_clipboard, "app/preload_clipboard", bool, true, Import, Gen, Gen)
 SETTING(screenshot_info_hide_on_drag, "app/screenshot_info_hide_on_drag", bool, false, Import, Gen, Gen)
+// Recent Screenshot Batch Copy (src/batch/). The master switch is OFF until the user turns it on; while it is
+// off the module watches no folder, registers no hotkey and never touches the clipboard.
+SETTING(batch_master_enabled, "batch/master_enabled", bool, false, Import, Gen, Gen)
+SETTING(batch_monitor_enabled, "batch/monitor_enabled", bool, true, Import, Gen, Gen)
+SETTING(batch_hotkey_enabled, "batch/hotkey_enabled", bool, true, Import, Gen, Gen)
+SETTING(batch_notifications, "batch/notifications", bool, true, Import, Gen, Gen)
+SETTING(batch_default_count, "batch/default_count", int, 10, Import, Gen, Gen)
+SETTING(batch_history_limit, "batch/history_limit", int, 50, Import, Gen, Gen)
+// Ctrl+Shift+V copies the default count; the others are optional and unset by default.
+SETTING(batch_hotkey, "batch/hotkey", QString, "ctrl+shift+v", Import, Gen, Gen)
+SETTING(batch_hotkey_5, "batch/hotkey_5", QString, "", Import, Gen, Gen)
+SETTING(batch_hotkey_10, "batch/hotkey_10", QString, "", Import, Gen, Gen)
+SETTING(batch_hotkey_15, "batch/hotkey_15", QString, "", Import, Gen, Gen)
+SETTING(batch_hotkey_20, "batch/hotkey_20", QString, "", Import, Gen, Gen)
+SETTING(batch_hotkey_selected, "batch/hotkey_selected", QString, "", Import, Gen, Gen)
+// Extra folders besides the screenshot save folder; absolute paths, so they stay on this computer.
+SETTING(batch_extra_folders, "batch/extra_folders", QStringList, {}, Local, Gen, Gen)

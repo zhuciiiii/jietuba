@@ -41,6 +41,7 @@ void add_quick_actions_group(SettingsDialog *dialog, QWidget *view, QVBoxLayout 
 QWidget *create_mouse_page(SettingsDialog *dialog);
 QWidget *create_pin_page(SettingsDialog *dialog);
 QWidget *create_screen_annotation_page(SettingsDialog *dialog);
+QWidget *create_batch_page(SettingsDialog *dialog);
 
 // page_clipboard: asks for a folder and moves the clipboard data there, or opens the data already
 // in it; on_changed gets the new database path once it is open. Also used by the welcome wizard.

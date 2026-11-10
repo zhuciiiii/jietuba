@@ -16,6 +16,10 @@
 // The application: tray icon, global hotkeys, window instances and start-up flow,
 // initialised once for the life of the process.
 namespace jietuba {
+namespace batch {
+class BatchCopyController;
+class BatchWindow;
+}
 namespace clipboard {
 class ClipboardManager;
 class ClipboardWindow;
@@ -68,6 +72,8 @@ public:
     void open_settings_page(int stack_index, const QString &route_key);
     void open_translator();
     void open_clipboard_window();
+    // Recent Screenshot Batch Copy: shows the window of the latest screenshots (src/batch/).
+    void open_batch_window();
     // Creates the clipboard window once, wired to the app; start-up preloading and the hotkey both
     // go through here.
     clipboard::ClipboardWindow *ensure_clipboard_window();
@@ -116,6 +122,9 @@ public:
     // The recording whose closing will retry quitting.
     QPointer<GifRecordWindow> recording_quit_pending_;
     QuickCaptureController *quick_capture = nullptr;
+    // Recent Screenshot Batch Copy; inactive until its own master switch is turned on.
+    batch::BatchCopyController *batch_copy = nullptr;
+    QPointer<batch::BatchWindow> batch_window;
     SmartTranslationController *smart_translation_controller = nullptr;
     // Created on first use.
     ScreenAnnotation *screen_annotation = nullptr;

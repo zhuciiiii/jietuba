@@ -4,6 +4,7 @@
 #include "core/logger.h"
 #include "core/theme.h"
 #include "core/ui_theme.h"
+#include "batch/batch_copy_controller.h"
 #include "main_app.h"
 #include "pin/pin_manager.h"
 #include "settings/tool_settings.h"
@@ -152,6 +153,35 @@ QMenu *create_tray_menu(MainApp *app) {
     action_annotation->setChecked(app->screen_annotation_running_);
     QObject::connect(action_annotation, &QAction::triggered, app, &MainApp::toggle_screen_annotation);
     menu->addAction(action_annotation);
+
+    // Recent Screenshot Batch Copy: the switch works without opening any window.
+    if (app->batch_copy) {
+        auto *batch_menu = menu->addMenu(tr_text("Batch Copy"));
+        batch_menu->setStyleSheet(menu_style());
+        const bool batch_on = app->batch_copy->master_enabled();
+        auto *action_batch = new QAction(tr_text("Enable Batch Copy"), batch_menu);
+        action_batch->setCheckable(true);
+        action_batch->setChecked(batch_on);
+        QObject::connect(action_batch, &QAction::triggered, app, [app](bool on) {
+            app->batch_copy->set_master_enabled(on); // re-registers the hotkeys and rebuilds this menu
+        });
+        batch_menu->addAction(action_batch);
+        batch_menu->addSeparator();
+        for (const int count : {5, 10, 15, 20}) {
+            auto *action = new QAction(tr_text("Copy Latest %1").arg(count), batch_menu);
+            action->setEnabled(batch_on);
+            QObject::connect(action, &QAction::triggered, app, [app, count] { app->batch_copy->copy_latest(count); });
+            batch_menu->addAction(action);
+        }
+        auto *action_selected = new QAction(tr_text("Copy Selected"), batch_menu);
+        action_selected->setEnabled(batch_on);
+        QObject::connect(action_selected, &QAction::triggered, app, [app] { app->batch_copy->copy_selected(); });
+        batch_menu->addAction(action_selected);
+        batch_menu->addSeparator();
+        auto *action_window = new QAction(tr_text("Recent Screenshots..."), batch_menu);
+        QObject::connect(action_window, &QAction::triggered, app, [app] { app->open_batch_window(); });
+        batch_menu->addAction(action_window);
+    }
 
     menu->addSeparator();
 

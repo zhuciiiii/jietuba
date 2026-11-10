@@ -1,4 +1,6 @@
 #include "main_app.h"
+#include "batch/batch_copy_controller.h"
+#include "batch/batch_window.h"
 #include "clipboard/core/manager.h"
 #include "clipboard/services/group_service.h"
 #include "clipboard/ui/dialogs/manage_dialog.h"
@@ -149,6 +151,21 @@ MainApp::MainApp(int &argc, char **argv) : app(std::make_unique<QApplication>(ar
     hotkey_system->set_suppressed(config_manager->get_global_hotkeys_disabled());
 
     quick_capture = new QuickCaptureController(this);
+    // Recent Screenshot Batch Copy: additive and OFF by default. Its watcher and hotkeys exist only while its own
+    // master switch is on; nothing here starts or stops jietuba's own capture or clipboard history.
+    batch_copy = new batch::BatchCopyController(config_manager, this);
+    app->setProperty("_batch_copy_controller", QVariant::fromValue<QObject *>(batch_copy));
+    connect(batch_copy, &batch::BatchCopyController::state_changed, this, [this] { update_hotkey(true); });
+    connect(batch_copy, &batch::BatchCopyController::window_requested, this, &MainApp::open_batch_window);
+    connect(batch_copy, &batch::BatchCopyController::notice, this, [this](const QString &title, const QString &text, bool error) {
+        if (tray_icon && config_manager->get_batch_notifications())
+            tray_icon->showMessage(title, text, error ? QSystemTrayIcon::Warning : QSystemTrayIcon::Information, 3500);
+    });
+    {
+        // The start-up hotkey registration comes later; only the watcher is brought in line here.
+        QSignalBlocker blocker(batch_copy);
+        batch_copy->apply();
+    }
     connect(ShortcutManager::instance(), &ShortcutManager::global_hotkeys_paused_changed, quick_capture, &QuickCaptureController::refresh);
     // Started before the hotkeys register, so a game already running keeps them from registering at all.
     game_mode_monitor = new GameModeMonitor(this);
@@ -179,6 +196,7 @@ MainApp::MainApp(int &argc, char **argv) : app(std::make_unique<QApplication>(ar
 bool MainApp::starting_up() const { return preloader_ && !preloader_->finished(); }
 
 MainApp::~MainApp() {
+    delete batch_window.data();
     delete screenshot_countdown_.data();
     // The watcher calls back into this object; stopping joins its thread.
     if (clipboard_manager && clipboard_manager->is_available()) {
@@ -293,6 +311,16 @@ void MainApp::update_hotkey(bool show_error) {
                             "Hotkey");
                 failed_hotkeys.emplace_back(slot ? QString("%1 (%2)").arg(label).arg(slot + 1) : label, hotkey);
             }
+        }
+    }
+
+    // Batch copy hotkeys: none while its master switch is off.
+    for (const auto &binding : batch_copy->hotkey_bindings()) {
+        if (hotkey_system->register_hotkey(binding.hotkey, binding.callback)) {
+            log_info(QString("Batch copy hotkey registered: %1 = %2").arg(binding.setting, binding.hotkey), "Hotkey");
+        } else {
+            log_warning(QString("Batch copy hotkey registration failed: %1 = %2").arg(binding.setting, binding.hotkey), "Hotkey");
+            failed_hotkeys.emplace_back(binding.label, binding.hotkey);
         }
     }
 
@@ -640,6 +668,19 @@ clipboard::ClipboardWindow *MainApp::ensure_clipboard_window() {
         connect(clipboard_window, &clipboard::ClipboardWindow::settings_requested, this, [this] { open_settings_page(2, "clipboard"); });
     }
     return clipboard_window;
+}
+
+void MainApp::open_batch_window() {
+    if (update_preparing) return;
+    if (!batch_window) {
+        batch_window = new batch::BatchWindow(batch_copy);
+        batch_window->setAttribute(Qt::WA_DeleteOnClose, false);
+        connect(batch_window, &batch::BatchWindow::open_settings_requested, this, [this] { open_settings_page(13, "batch"); });
+    }
+    batch_window->setWindowState(batch_window->windowState() & ~Qt::WindowMinimized);
+    batch_window->show();
+    batch_window->raise();
+    batch_window->activateWindow();
 }
 
 void MainApp::open_clipboard_window() {

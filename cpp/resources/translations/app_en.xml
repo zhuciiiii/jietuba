@@ -7413,4 +7413,343 @@ Replace it?</translation>
         <translation>Copied files and folders, shown with their icons, names and sizes.</translation>
     </message>
 </context>
+
+<!-- ========== Recent Screenshot Batch Copy ========== -->
+<context>
+    <name>BatchCopy</name>
+    <message>
+        <source>Automatic screenshot saving is turned off. Batch copy uses the saved screenshot files, so turn on "Auto-save screenshots" in the Screenshot settings. Nothing has been changed for you.</source>
+        <translation>Automatic screenshot saving is turned off. Batch copy uses the saved screenshot files, so turn on "Auto-save screenshots" in the Screenshot settings. Nothing has been changed for you.</translation>
+    </message>
+    <message>
+        <source>Batch Copy</source>
+        <translation>Batch Copy</translation>
+    </message>
+    <message>
+        <source>Batch Copy failed</source>
+        <translation>Batch Copy failed</translation>
+    </message>
+    <message>
+        <source>Batch copy is turned off. Turn on its master switch first.</source>
+        <translation>Batch copy is turned off. Turn on its master switch first.</translation>
+    </message>
+    <message>
+        <source>No saved screenshots were found in the screenshot folder.</source>
+        <translation>No saved screenshots were found in the screenshot folder.</translation>
+    </message>
+    <message>
+        <source>No screenshots are selected. Select some in the Recent Screenshots window first.</source>
+        <translation>No screenshots are selected. Select some in the Recent Screenshots window first.</translation>
+    </message>
+    <message>
+        <source>The screenshot files no longer exist.</source>
+        <translation>The screenshot files no longer exist.</translation>
+    </message>
+    <message>
+        <source>Could not copy to the clipboard: </source>
+        <translation>Could not copy to the clipboard: </translation>
+    </message>
+    <message>
+        <source>%1 screenshots copied. Press Ctrl+V to paste.</source>
+        <translation>%1 screenshots copied. Press Ctrl+V to paste.</translation>
+    </message>
+    <message>
+        <source>Batch Copy (default count)</source>
+        <translation>Batch Copy (default count)</translation>
+    </message>
+    <message>
+        <source>Batch Copy Latest 5</source>
+        <translation>Batch Copy Latest 5</translation>
+    </message>
+    <message>
+        <source>Batch Copy Latest 10</source>
+        <translation>Batch Copy Latest 10</translation>
+    </message>
+    <message>
+        <source>Batch Copy Latest 15</source>
+        <translation>Batch Copy Latest 15</translation>
+    </message>
+    <message>
+        <source>Batch Copy Latest 20</source>
+        <translation>Batch Copy Latest 20</translation>
+    </message>
+    <message>
+        <source>Batch Copy Selected</source>
+        <translation>Batch Copy Selected</translation>
+    </message>
+    <message>
+        <source>Screenshot</source>
+        <translation>Screenshot</translation>
+    </message>
+    <message>
+        <source>Clipboard</source>
+        <translation>Clipboard</translation>
+    </message>
+    <message>
+        <source>Pin Clipboard Image</source>
+        <translation>Pin Clipboard Image</translation>
+    </message>
+    <message>
+        <source>Translation</source>
+        <translation>Translation</translation>
+    </message>
+    <message>
+        <source>Screen Annotation</source>
+        <translation>Screen Annotation</translation>
+    </message>
+    <message>
+        <source>Recent Screenshots</source>
+        <translation>Recent Screenshots</translation>
+    </message>
+    <message>
+        <source>Copy Latest %1</source>
+        <translation>Copy Latest %1</translation>
+    </message>
+    <message>
+        <source>Copy Selected</source>
+        <translation>Copy Selected</translation>
+    </message>
+    <message>
+        <source>Select Latest...</source>
+        <translation>Select Latest...</translation>
+    </message>
+    <message>
+        <source>Clear Selection</source>
+        <translation>Clear Selection</translation>
+    </message>
+    <message>
+        <source>Refresh</source>
+        <translation>Refresh</translation>
+    </message>
+    <message>
+        <source>Open Folder</source>
+        <translation>Open Folder</translation>
+    </message>
+    <message>
+        <source>Batch Copy Settings</source>
+        <translation>Batch Copy Settings</translation>
+    </message>
+    <message>
+        <source>Latest %1</source>
+        <translation>Latest %1</translation>
+    </message>
+    <message>
+        <source>Select All</source>
+        <translation>Select All</translation>
+    </message>
+    <message>
+        <source>Batch copy is ON</source>
+        <translation>Batch copy is ON</translation>
+    </message>
+    <message>
+        <source>Batch copy is OFF - no folder is watched, the hotkey is off and the clipboard is not touched.</source>
+        <translation>Batch copy is OFF - no folder is watched, the hotkey is off and the clipboard is not touched.</translation>
+    </message>
+    <message>
+        <source>Turn Off</source>
+        <translation>Turn Off</translation>
+    </message>
+    <message>
+        <source>Turn On</source>
+        <translation>Turn On</translation>
+    </message>
+    <message>
+        <source>%1 selected, %2 shown</source>
+        <translation>%1 selected, %2 shown</translation>
+    </message>
+</context>
+<context>
+    <name>SystemTray</name>
+    <message>
+        <source>Batch Copy</source>
+        <translation>Batch Copy</translation>
+    </message>
+    <message>
+        <source>Enable Batch Copy</source>
+        <translation>Enable Batch Copy</translation>
+    </message>
+    <message>
+        <source>Copy Latest %1</source>
+        <translation>Copy Latest %1</translation>
+    </message>
+    <message>
+        <source>Copy Selected</source>
+        <translation>Copy Selected</translation>
+    </message>
+    <message>
+        <source>Recent Screenshots...</source>
+        <translation>Recent Screenshots...</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsDialog</name>
+    <message>
+        <source>Batch Copy</source>
+        <translation>Batch Copy</translation>
+    </message>
+    <message>
+        <source>Batch Copy Settings</source>
+        <translation>Batch Copy Settings</translation>
+    </message>
+    <message>
+        <source>Batch Copy Hotkeys</source>
+        <translation>Batch Copy Hotkeys</translation>
+    </message>
+    <message>
+        <source>Screenshot Source</source>
+        <translation>Screenshot Source</translation>
+    </message>
+    <message>
+        <source>Batch Copy Master Switch</source>
+        <translation>Batch Copy Master Switch</translation>
+    </message>
+    <message>
+        <source>Off by default. While off, batch copy watches no folder, registers no hotkey and never changes the clipboard. jietuba's own features are not affected.</source>
+        <translation>Off by default. While off, batch copy watches no folder, registers no hotkey and never changes the clipboard. jietuba's own features are not affected.</translation>
+    </message>
+    <message>
+        <source>Screenshot Monitoring</source>
+        <translation>Screenshot Monitoring</translation>
+    </message>
+    <message>
+        <source>Watch the screenshot folders so the Recent Screenshots window updates by itself. Needs the master switch.</source>
+        <translation>Watch the screenshot folders so the Recent Screenshots window updates by itself. Needs the master switch.</translation>
+    </message>
+    <message>
+        <source>Register the batch copy hotkeys below. Needs the master switch.</source>
+        <translation>Register the batch copy hotkeys below. Needs the master switch.</translation>
+    </message>
+    <message>
+        <source>Batch Copy Notifications</source>
+        <translation>Batch Copy Notifications</translation>
+    </message>
+    <message>
+        <source>Tell me when screenshots were copied or copying failed.</source>
+        <translation>Tell me when screenshots were copied or copying failed.</translation>
+    </message>
+    <message>
+        <source>Default Batch Size</source>
+        <translation>Default Batch Size</translation>
+    </message>
+    <message>
+        <source>How many screenshots the main hotkey and the tray entry copy.</source>
+        <translation>How many screenshots the main hotkey and the tray entry copy.</translation>
+    </message>
+    <message>
+        <source>Recent Screenshot History</source>
+        <translation>Recent Screenshot History</translation>
+    </message>
+    <message>
+        <source>How many recent screenshots the window lists.</source>
+        <translation>How many recent screenshots the window lists.</translation>
+    </message>
+    <message>
+        <source>Windows Startup</source>
+        <translation>Windows Startup</translation>
+    </message>
+    <message>
+        <source>Batch copy runs inside jietuba, so it starts with jietuba. Launch on startup is set on the Other page.</source>
+        <translation>Batch copy runs inside jietuba, so it starts with jietuba. Launch on startup is set on the Other page.</translation>
+    </message>
+    <message>
+        <source>Open Other Settings</source>
+        <translation>Open Other Settings</translation>
+    </message>
+    <message>
+        <source>Recent Screenshots</source>
+        <translation>Recent Screenshots</translation>
+    </message>
+    <message>
+        <source>Open the window with the latest screenshots, select some and copy them.</source>
+        <translation>Open the window with the latest screenshots, select some and copy them.</translation>
+    </message>
+    <message>
+        <source>Open Window</source>
+        <translation>Open Window</translation>
+    </message>
+    <message>
+        <source>Batch Copy Hotkey</source>
+        <translation>Batch Copy Hotkey</translation>
+    </message>
+    <message>
+        <source>Copies the latest screenshots (the default count above) to the clipboard. Default: Ctrl+Shift+V.</source>
+        <translation>Copies the latest screenshots (the default count above) to the clipboard. Default: Ctrl+Shift+V.</translation>
+    </message>
+    <message>
+        <source>Copy Latest 5</source>
+        <translation>Copy Latest 5</translation>
+    </message>
+    <message>
+        <source>Copy Latest 10</source>
+        <translation>Copy Latest 10</translation>
+    </message>
+    <message>
+        <source>Copy Latest 15</source>
+        <translation>Copy Latest 15</translation>
+    </message>
+    <message>
+        <source>Copy Latest 20</source>
+        <translation>Copy Latest 20</translation>
+    </message>
+    <message>
+        <source>Optional hotkey, empty by default.</source>
+        <translation>Optional hotkey, empty by default.</translation>
+    </message>
+    <message>
+        <source>Copy Selected</source>
+        <translation>Copy Selected</translation>
+    </message>
+    <message>
+        <source>Copies the screenshots selected in the Recent Screenshots window. Optional, empty by default.</source>
+        <translation>Copies the screenshots selected in the Recent Screenshots window. Optional, empty by default.</translation>
+    </message>
+    <message>
+        <source>This key combination is invalid or reserved by the system.</source>
+        <translation>This key combination is invalid or reserved by the system.</translation>
+    </message>
+    <message>
+        <source>Already used by: </source>
+        <translation>Already used by: </translation>
+    </message>
+    <message>
+        <source>Screenshot Folder</source>
+        <translation>Screenshot Folder</translation>
+    </message>
+    <message>
+        <source>Batch copy uses the screenshots jietuba saves automatically to this folder. Change it on the Screenshot page.</source>
+        <translation>Batch copy uses the screenshots jietuba saves automatically to this folder. Change it on the Screenshot page.</translation>
+    </message>
+    <message>
+        <source>Automatic Saving</source>
+        <translation>Automatic Saving</translation>
+    </message>
+    <message>
+        <source>Automatic screenshot saving is on.</source>
+        <translation>Automatic screenshot saving is on.</translation>
+    </message>
+    <message>
+        <source>Automatic screenshot saving is OFF. Batch copy needs the saved screenshot files: turn on auto-save on the Screenshot page. Nothing was changed for you.</source>
+        <translation>Automatic screenshot saving is OFF. Batch copy needs the saved screenshot files: turn on auto-save on the Screenshot page. Nothing was changed for you.</translation>
+    </message>
+    <message>
+        <source>Extra Folders</source>
+        <translation>Extra Folders</translation>
+    </message>
+    <message>
+        <source>None. Screenshots saved elsewhere can be added here.</source>
+        <translation>None. Screenshots saved elsewhere can be added here.</translation>
+    </message>
+    <message>
+        <source>Add Folder</source>
+        <translation>Add Folder</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Clear</translation>
+    </message>
+    <message>
+        <source>Choose a screenshot folder</source>
+        <translation>Choose a screenshot folder</translation>
+    </message>
+</context>
 </TS>
