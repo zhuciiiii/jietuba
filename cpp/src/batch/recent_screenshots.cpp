@@ -26,7 +26,8 @@ QList<RecentShot> scan_recent(const QStringList &folders, int limit, const QStri
         for (const auto &info : dir.entryInfoList(QDir::Files | QDir::NoDotAndDotDot)) {
             if (!is_screenshot_file(info.fileName(), info.size(), suffixes)) continue;
             const QString path = QDir::toNativeSeparators(info.absoluteFilePath());
-            if (!seen.insert(path.toLower()).second) continue;
+            if (seen.contains(path.toLower())) continue;
+            seen.insert(path.toLower());
             shots.append({path, info.lastModified(), info.size()});
         }
     }

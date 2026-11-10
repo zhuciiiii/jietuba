@@ -90,13 +90,17 @@ void BatchCopyController::start_watching() {
 
 void BatchCopyController::stop_watching() {
     if (!watcher_) return;
+    // An event already queued must not restart the timer once the module is off.
+    disconnect(watcher_, nullptr, this, nullptr);
     watcher_->deleteLater();
     watcher_ = nullptr;
     debounce_->stop();
     log_info("Batch copy: folder watching stopped", "BatchCopy");
 }
 
-void BatchCopyController::rescan_soon() { debounce_->start(); }
+void BatchCopyController::rescan_soon() {
+    if (watcher_) debounce_->start();
+}
 
 CopyOutcome BatchCopyController::finish(CopyOutcome outcome) {
     emit notice(outcome.ok ? tr_text("Batch Copy") : tr_text("Batch Copy failed"), outcome.message, !outcome.ok);

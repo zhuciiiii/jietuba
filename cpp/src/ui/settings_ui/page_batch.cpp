@@ -13,6 +13,7 @@
 #include "ui/settings_ui/dialog.h"
 #include "ui/settings_ui/pages.h"
 #include <QApplication>
+#include <QDir>
 #include <QLabel>
 #include <QPointer>
 #include <QVBoxLayout>
