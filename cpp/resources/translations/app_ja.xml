@@ -7475,4 +7475,343 @@ Replace it?</source>
         <translation>コピーしたファイルとフォルダー。アイコン、名前、サイズを表示します。</translation>
     </message>
 </context>
+
+<!-- ========== Recent Screenshot Batch Copy ========== -->
+<context>
+    <name>BatchCopy</name>
+    <message>
+        <source>Automatic screenshot saving is turned off. Batch copy uses the saved screenshot files, so turn on "Auto-save screenshots" in the Screenshot settings. Nothing has been changed for you.</source>
+        <translation>スクリーンショットの自動保存がオフです。一括コピーは保存済みのファイルを使うため、スクリーンショット設定で自動保存をオンにしてください。設定は変更していません。</translation>
+    </message>
+    <message>
+        <source>Batch Copy</source>
+        <translation>一括コピー</translation>
+    </message>
+    <message>
+        <source>Batch Copy failed</source>
+        <translation>一括コピーに失敗しました</translation>
+    </message>
+    <message>
+        <source>Batch copy is turned off. Turn on its master switch first.</source>
+        <translation>一括コピーはオフです。先にマスタースイッチをオンにしてください。</translation>
+    </message>
+    <message>
+        <source>No saved screenshots were found in the screenshot folder.</source>
+        <translation>スクリーンショットフォルダに保存済みの画像が見つかりません。</translation>
+    </message>
+    <message>
+        <source>No screenshots are selected. Select some in the Recent Screenshots window first.</source>
+        <translation>スクリーンショットが選択されていません。先に「最近のスクリーンショット」ウィンドウで選択してください。</translation>
+    </message>
+    <message>
+        <source>The screenshot files no longer exist.</source>
+        <translation>スクリーンショットのファイルが存在しません。</translation>
+    </message>
+    <message>
+        <source>Could not copy to the clipboard: </source>
+        <translation>クリップボードにコピーできませんでした：</translation>
+    </message>
+    <message>
+        <source>%1 screenshots copied. Press Ctrl+V to paste.</source>
+        <translation>%1 枚のスクリーンショットをコピーしました。Ctrl+V で貼り付けできます。</translation>
+    </message>
+    <message>
+        <source>Batch Copy (default count)</source>
+        <translation>一括コピー（既定の枚数）</translation>
+    </message>
+    <message>
+        <source>Batch Copy Latest 5</source>
+        <translation>最新 5 枚を一括コピー</translation>
+    </message>
+    <message>
+        <source>Batch Copy Latest 10</source>
+        <translation>最新 10 枚を一括コピー</translation>
+    </message>
+    <message>
+        <source>Batch Copy Latest 15</source>
+        <translation>最新 15 枚を一括コピー</translation>
+    </message>
+    <message>
+        <source>Batch Copy Latest 20</source>
+        <translation>最新 20 枚を一括コピー</translation>
+    </message>
+    <message>
+        <source>Batch Copy Selected</source>
+        <translation>選択分を一括コピー</translation>
+    </message>
+    <message>
+        <source>Screenshot</source>
+        <translation>スクリーンショット</translation>
+    </message>
+    <message>
+        <source>Clipboard</source>
+        <translation>クリップボード</translation>
+    </message>
+    <message>
+        <source>Pin Clipboard Image</source>
+        <translation>クリップボード画像をピン留め</translation>
+    </message>
+    <message>
+        <source>Translation</source>
+        <translation>翻訳</translation>
+    </message>
+    <message>
+        <source>Screen Annotation</source>
+        <translation>画面に描く</translation>
+    </message>
+    <message>
+        <source>Recent Screenshots</source>
+        <translation>最近のスクリーンショット</translation>
+    </message>
+    <message>
+        <source>Copy Latest %1</source>
+        <translation>最新 %1 枚をコピー</translation>
+    </message>
+    <message>
+        <source>Copy Selected</source>
+        <translation>選択分をコピー</translation>
+    </message>
+    <message>
+        <source>Select Latest...</source>
+        <translation>最新を選択…</translation>
+    </message>
+    <message>
+        <source>Clear Selection</source>
+        <translation>選択を解除</translation>
+    </message>
+    <message>
+        <source>Refresh</source>
+        <translation>更新</translation>
+    </message>
+    <message>
+        <source>Open Folder</source>
+        <translation>フォルダを開く</translation>
+    </message>
+    <message>
+        <source>Batch Copy Settings</source>
+        <translation>一括コピーの設定</translation>
+    </message>
+    <message>
+        <source>Latest %1</source>
+        <translation>最新 %1 枚</translation>
+    </message>
+    <message>
+        <source>Select All</source>
+        <translation>すべて選択</translation>
+    </message>
+    <message>
+        <source>Batch copy is ON</source>
+        <translation>一括コピーはオンです</translation>
+    </message>
+    <message>
+        <source>Batch copy is OFF - no folder is watched, the hotkey is off and the clipboard is not touched.</source>
+        <translation>一括コピーはオフです。フォルダは監視されず、ホットキーも無効で、クリップボードも変更されません。</translation>
+    </message>
+    <message>
+        <source>Turn Off</source>
+        <translation>オフにする</translation>
+    </message>
+    <message>
+        <source>Turn On</source>
+        <translation>オンにする</translation>
+    </message>
+    <message>
+        <source>%1 selected, %2 shown</source>
+        <translation>%1 枚選択、%2 枚表示</translation>
+    </message>
+</context>
+<context>
+    <name>SystemTray</name>
+    <message>
+        <source>Batch Copy</source>
+        <translation>一括コピー</translation>
+    </message>
+    <message>
+        <source>Enable Batch Copy</source>
+        <translation>一括コピーを有効にする</translation>
+    </message>
+    <message>
+        <source>Copy Latest %1</source>
+        <translation>最新 %1 枚をコピー</translation>
+    </message>
+    <message>
+        <source>Copy Selected</source>
+        <translation>選択分をコピー</translation>
+    </message>
+    <message>
+        <source>Recent Screenshots...</source>
+        <translation>最近のスクリーンショット…</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsDialog</name>
+    <message>
+        <source>Batch Copy</source>
+        <translation>一括コピー</translation>
+    </message>
+    <message>
+        <source>Batch Copy Settings</source>
+        <translation>一括コピーの設定</translation>
+    </message>
+    <message>
+        <source>Batch Copy Hotkeys</source>
+        <translation>一括コピーのホットキー</translation>
+    </message>
+    <message>
+        <source>Screenshot Source</source>
+        <translation>スクリーンショットの取得元</translation>
+    </message>
+    <message>
+        <source>Batch Copy Master Switch</source>
+        <translation>一括コピーのマスタースイッチ</translation>
+    </message>
+    <message>
+        <source>Off by default. While off, batch copy watches no folder, registers no hotkey and never changes the clipboard. jietuba's own features are not affected.</source>
+        <translation>既定はオフ。オフの間は、フォルダの監視、ホットキーの登録、クリップボードの変更を一切行いません。jietuba 本来の機能には影響しません。</translation>
+    </message>
+    <message>
+        <source>Screenshot Monitoring</source>
+        <translation>スクリーンショットの監視</translation>
+    </message>
+    <message>
+        <source>Watch the screenshot folders so the Recent Screenshots window updates by itself. Needs the master switch.</source>
+        <translation>スクリーンショットフォルダを監視し、最近のスクリーンショット画面を自動更新します。マスタースイッチが必要です。</translation>
+    </message>
+    <message>
+        <source>Register the batch copy hotkeys below. Needs the master switch.</source>
+        <translation>下の一括コピーのホットキーを登録します。マスタースイッチが必要です。</translation>
+    </message>
+    <message>
+        <source>Batch Copy Notifications</source>
+        <translation>一括コピーの通知</translation>
+    </message>
+    <message>
+        <source>Tell me when screenshots were copied or copying failed.</source>
+        <translation>コピーの完了または失敗を通知します。</translation>
+    </message>
+    <message>
+        <source>Default Batch Size</source>
+        <translation>既定の一括枚数</translation>
+    </message>
+    <message>
+        <source>How many screenshots the main hotkey and the tray entry copy.</source>
+        <translation>メインのホットキーとトレイ項目でコピーする枚数です。</translation>
+    </message>
+    <message>
+        <source>Recent Screenshot History</source>
+        <translation>最近のスクリーンショット履歴</translation>
+    </message>
+    <message>
+        <source>How many recent screenshots the window lists.</source>
+        <translation>ウィンドウに表示する最近のスクリーンショットの数です。</translation>
+    </message>
+    <message>
+        <source>Windows Startup</source>
+        <translation>Windows 起動時</translation>
+    </message>
+    <message>
+        <source>Batch copy runs inside jietuba, so it starts with jietuba. Launch on startup is set on the Other page.</source>
+        <translation>一括コピーは jietuba の中で動作し、jietuba と一緒に起動します。スタートアップの設定は「その他」ページにあります。</translation>
+    </message>
+    <message>
+        <source>Open Other Settings</source>
+        <translation>「その他」設定を開く</translation>
+    </message>
+    <message>
+        <source>Recent Screenshots</source>
+        <translation>最近のスクリーンショット</translation>
+    </message>
+    <message>
+        <source>Open the window with the latest screenshots, select some and copy them.</source>
+        <translation>最新のスクリーンショットのウィンドウを開き、選んでコピーします。</translation>
+    </message>
+    <message>
+        <source>Open Window</source>
+        <translation>ウィンドウを開く</translation>
+    </message>
+    <message>
+        <source>Batch Copy Hotkey</source>
+        <translation>一括コピーのホットキー</translation>
+    </message>
+    <message>
+        <source>Copies the latest screenshots (the default count above) to the clipboard. Default: Ctrl+Shift+V.</source>
+        <translation>最新のスクリーンショット（上の既定枚数）をクリップボードにコピーします。既定：Ctrl+Shift+V。</translation>
+    </message>
+    <message>
+        <source>Copy Latest 5</source>
+        <translation>最新 5 枚をコピー</translation>
+    </message>
+    <message>
+        <source>Copy Latest 10</source>
+        <translation>最新 10 枚をコピー</translation>
+    </message>
+    <message>
+        <source>Copy Latest 15</source>
+        <translation>最新 15 枚をコピー</translation>
+    </message>
+    <message>
+        <source>Copy Latest 20</source>
+        <translation>最新 20 枚をコピー</translation>
+    </message>
+    <message>
+        <source>Optional hotkey, empty by default.</source>
+        <translation>任意のホットキー。既定は未設定です。</translation>
+    </message>
+    <message>
+        <source>Copy Selected</source>
+        <translation>選択分をコピー</translation>
+    </message>
+    <message>
+        <source>Copies the screenshots selected in the Recent Screenshots window. Optional, empty by default.</source>
+        <translation>「最近のスクリーンショット」ウィンドウで選択した画像をコピーします。任意、既定は未設定です。</translation>
+    </message>
+    <message>
+        <source>This key combination is invalid or reserved by the system.</source>
+        <translation>このキーの組み合わせは無効か、システムで予約されています。</translation>
+    </message>
+    <message>
+        <source>Already used by: </source>
+        <translation>すでに使用中：</translation>
+    </message>
+    <message>
+        <source>Screenshot Folder</source>
+        <translation>スクリーンショットフォルダ</translation>
+    </message>
+    <message>
+        <source>Batch copy uses the screenshots jietuba saves automatically to this folder. Change it on the Screenshot page.</source>
+        <translation>一括コピーは、jietuba がこのフォルダに自動保存した画像を使います。変更は「スクリーンショット」ページで行います。</translation>
+    </message>
+    <message>
+        <source>Automatic Saving</source>
+        <translation>自動保存</translation>
+    </message>
+    <message>
+        <source>Automatic screenshot saving is on.</source>
+        <translation>スクリーンショットの自動保存はオンです。</translation>
+    </message>
+    <message>
+        <source>Automatic screenshot saving is OFF. Batch copy needs the saved screenshot files: turn on auto-save on the Screenshot page. Nothing was changed for you.</source>
+        <translation>スクリーンショットの自動保存がオフです。一括コピーには保存済みのファイルが必要です。「スクリーンショット」ページで自動保存をオンにしてください。設定は変更していません。</translation>
+    </message>
+    <message>
+        <source>Extra Folders</source>
+        <translation>追加フォルダ</translation>
+    </message>
+    <message>
+        <source>None. Screenshots saved elsewhere can be added here.</source>
+        <translation>なし。別の場所に保存した画像はここで追加できます。</translation>
+    </message>
+    <message>
+        <source>Add Folder</source>
+        <translation>フォルダを追加</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>クリア</translation>
+    </message>
+    <message>
+        <source>Choose a screenshot folder</source>
+        <translation>スクリーンショットフォルダを選択</translation>
+    </message>
+</context>
 </TS>

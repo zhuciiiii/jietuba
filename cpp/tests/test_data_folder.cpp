@@ -101,7 +101,8 @@ private slots:
     // The settings bound to this computer, by the table's scope column.
     void localSettingsAreTheTablesLocalRows() {
         const QSet<QString> expected{"app/screenshot_save_path", "app/save_dialog_last_dir", "clipboard/db_path", "app/log_dir",
-                                     "app/autostart_enabled", "app/run_as_admin", "app/has_run_before", "app/welcome_wizard_done"};
+                                     "app/autostart_enabled", "app/run_as_admin", "app/has_run_before", "app/welcome_wizard_done",
+                                     "batch/extra_folders"};
         QCOMPARE(LOCAL_SETTING_PATHS(), expected);
         QCOMPARE(LOCAL_SETTINGS_KEY, QString("HKEY_CURRENT_USER\\Software\\Jietuba\\ToolSettings"));
     }

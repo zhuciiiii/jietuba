@@ -7466,4 +7466,343 @@ Replace it?</source>
         <translation>복사한 파일과 폴더. 아이콘, 이름, 크기를 표시합니다.</translation>
     </message>
 </context>
+
+<!-- ========== Recent Screenshot Batch Copy ========== -->
+<context>
+    <name>BatchCopy</name>
+    <message>
+        <source>Automatic screenshot saving is turned off. Batch copy uses the saved screenshot files, so turn on "Auto-save screenshots" in the Screenshot settings. Nothing has been changed for you.</source>
+        <translation>스크린샷 자동 저장이 꺼져 있습니다. 일괄 복사는 저장된 파일을 사용하므로 스크린샷 설정에서 자동 저장을 켜 주세요. 설정은 변경하지 않았습니다.</translation>
+    </message>
+    <message>
+        <source>Batch Copy</source>
+        <translation>일괄 복사</translation>
+    </message>
+    <message>
+        <source>Batch Copy failed</source>
+        <translation>일괄 복사 실패</translation>
+    </message>
+    <message>
+        <source>Batch copy is turned off. Turn on its master switch first.</source>
+        <translation>일괄 복사가 꺼져 있습니다. 먼저 마스터 스위치를 켜 주세요.</translation>
+    </message>
+    <message>
+        <source>No saved screenshots were found in the screenshot folder.</source>
+        <translation>스크린샷 폴더에서 저장된 이미지를 찾을 수 없습니다.</translation>
+    </message>
+    <message>
+        <source>No screenshots are selected. Select some in the Recent Screenshots window first.</source>
+        <translation>선택된 스크린샷이 없습니다. 먼저 '최근 스크린샷' 창에서 선택해 주세요.</translation>
+    </message>
+    <message>
+        <source>The screenshot files no longer exist.</source>
+        <translation>스크린샷 파일이 더 이상 없습니다.</translation>
+    </message>
+    <message>
+        <source>Could not copy to the clipboard: </source>
+        <translation>클립보드에 복사할 수 없습니다: </translation>
+    </message>
+    <message>
+        <source>%1 screenshots copied. Press Ctrl+V to paste.</source>
+        <translation>스크린샷 %1장을 복사했습니다. Ctrl+V로 붙여넣으세요.</translation>
+    </message>
+    <message>
+        <source>Batch Copy (default count)</source>
+        <translation>일괄 복사(기본 수량)</translation>
+    </message>
+    <message>
+        <source>Batch Copy Latest 5</source>
+        <translation>최신 5장 일괄 복사</translation>
+    </message>
+    <message>
+        <source>Batch Copy Latest 10</source>
+        <translation>최신 10장 일괄 복사</translation>
+    </message>
+    <message>
+        <source>Batch Copy Latest 15</source>
+        <translation>최신 15장 일괄 복사</translation>
+    </message>
+    <message>
+        <source>Batch Copy Latest 20</source>
+        <translation>최신 20장 일괄 복사</translation>
+    </message>
+    <message>
+        <source>Batch Copy Selected</source>
+        <translation>선택 항목 일괄 복사</translation>
+    </message>
+    <message>
+        <source>Screenshot</source>
+        <translation>스크린샷</translation>
+    </message>
+    <message>
+        <source>Clipboard</source>
+        <translation>클립보드</translation>
+    </message>
+    <message>
+        <source>Pin Clipboard Image</source>
+        <translation>클립보드 이미지 고정</translation>
+    </message>
+    <message>
+        <source>Translation</source>
+        <translation>번역</translation>
+    </message>
+    <message>
+        <source>Screen Annotation</source>
+        <translation>화면 주석</translation>
+    </message>
+    <message>
+        <source>Recent Screenshots</source>
+        <translation>최근 스크린샷</translation>
+    </message>
+    <message>
+        <source>Copy Latest %1</source>
+        <translation>최신 %1장 복사</translation>
+    </message>
+    <message>
+        <source>Copy Selected</source>
+        <translation>선택 항목 복사</translation>
+    </message>
+    <message>
+        <source>Select Latest...</source>
+        <translation>최신 선택…</translation>
+    </message>
+    <message>
+        <source>Clear Selection</source>
+        <translation>선택 해제</translation>
+    </message>
+    <message>
+        <source>Refresh</source>
+        <translation>새로 고침</translation>
+    </message>
+    <message>
+        <source>Open Folder</source>
+        <translation>폴더 열기</translation>
+    </message>
+    <message>
+        <source>Batch Copy Settings</source>
+        <translation>일괄 복사 설정</translation>
+    </message>
+    <message>
+        <source>Latest %1</source>
+        <translation>최신 %1장</translation>
+    </message>
+    <message>
+        <source>Select All</source>
+        <translation>모두 선택</translation>
+    </message>
+    <message>
+        <source>Batch copy is ON</source>
+        <translation>일괄 복사 켜짐</translation>
+    </message>
+    <message>
+        <source>Batch copy is OFF - no folder is watched, the hotkey is off and the clipboard is not touched.</source>
+        <translation>일괄 복사가 꺼져 있습니다. 폴더를 감시하지 않고, 단축키도 꺼져 있으며, 클립보드도 건드리지 않습니다.</translation>
+    </message>
+    <message>
+        <source>Turn Off</source>
+        <translation>끄기</translation>
+    </message>
+    <message>
+        <source>Turn On</source>
+        <translation>켜기</translation>
+    </message>
+    <message>
+        <source>%1 selected, %2 shown</source>
+        <translation>%1장 선택, %2장 표시</translation>
+    </message>
+</context>
+<context>
+    <name>SystemTray</name>
+    <message>
+        <source>Batch Copy</source>
+        <translation>일괄 복사</translation>
+    </message>
+    <message>
+        <source>Enable Batch Copy</source>
+        <translation>일괄 복사 사용</translation>
+    </message>
+    <message>
+        <source>Copy Latest %1</source>
+        <translation>최신 %1장 복사</translation>
+    </message>
+    <message>
+        <source>Copy Selected</source>
+        <translation>선택 항목 복사</translation>
+    </message>
+    <message>
+        <source>Recent Screenshots...</source>
+        <translation>최근 스크린샷…</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsDialog</name>
+    <message>
+        <source>Batch Copy</source>
+        <translation>일괄 복사</translation>
+    </message>
+    <message>
+        <source>Batch Copy Settings</source>
+        <translation>일괄 복사 설정</translation>
+    </message>
+    <message>
+        <source>Batch Copy Hotkeys</source>
+        <translation>일괄 복사 단축키</translation>
+    </message>
+    <message>
+        <source>Screenshot Source</source>
+        <translation>스크린샷 위치</translation>
+    </message>
+    <message>
+        <source>Batch Copy Master Switch</source>
+        <translation>일괄 복사 마스터 스위치</translation>
+    </message>
+    <message>
+        <source>Off by default. While off, batch copy watches no folder, registers no hotkey and never changes the clipboard. jietuba's own features are not affected.</source>
+        <translation>기본값은 꺼짐입니다. 꺼져 있는 동안에는 폴더 감시, 단축키 등록, 클립보드 변경을 하지 않으며 jietuba 기존 기능에는 영향이 없습니다.</translation>
+    </message>
+    <message>
+        <source>Screenshot Monitoring</source>
+        <translation>스크린샷 감시</translation>
+    </message>
+    <message>
+        <source>Watch the screenshot folders so the Recent Screenshots window updates by itself. Needs the master switch.</source>
+        <translation>스크린샷 폴더를 감시하여 최근 스크린샷 창을 자동으로 갱신합니다. 마스터 스위치가 필요합니다.</translation>
+    </message>
+    <message>
+        <source>Register the batch copy hotkeys below. Needs the master switch.</source>
+        <translation>아래 일괄 복사 단축키를 등록합니다. 마스터 스위치가 필요합니다.</translation>
+    </message>
+    <message>
+        <source>Batch Copy Notifications</source>
+        <translation>일괄 복사 알림</translation>
+    </message>
+    <message>
+        <source>Tell me when screenshots were copied or copying failed.</source>
+        <translation>복사가 완료되거나 실패하면 알려 줍니다.</translation>
+    </message>
+    <message>
+        <source>Default Batch Size</source>
+        <translation>기본 일괄 수량</translation>
+    </message>
+    <message>
+        <source>How many screenshots the main hotkey and the tray entry copy.</source>
+        <translation>주 단축키와 트레이 항목이 복사하는 장수입니다.</translation>
+    </message>
+    <message>
+        <source>Recent Screenshot History</source>
+        <translation>최근 스크린샷 기록</translation>
+    </message>
+    <message>
+        <source>How many recent screenshots the window lists.</source>
+        <translation>창에 표시할 최근 스크린샷 수입니다.</translation>
+    </message>
+    <message>
+        <source>Windows Startup</source>
+        <translation>Windows 시작</translation>
+    </message>
+    <message>
+        <source>Batch copy runs inside jietuba, so it starts with jietuba. Launch on startup is set on the Other page.</source>
+        <translation>일괄 복사는 jietuba 안에서 실행되므로 jietuba와 함께 시작됩니다. 시작 프로그램 설정은 '기타' 페이지에 있습니다.</translation>
+    </message>
+    <message>
+        <source>Open Other Settings</source>
+        <translation>'기타' 설정 열기</translation>
+    </message>
+    <message>
+        <source>Recent Screenshots</source>
+        <translation>최근 스크린샷</translation>
+    </message>
+    <message>
+        <source>Open the window with the latest screenshots, select some and copy them.</source>
+        <translation>최신 스크린샷 창을 열어 선택하고 복사합니다.</translation>
+    </message>
+    <message>
+        <source>Open Window</source>
+        <translation>창 열기</translation>
+    </message>
+    <message>
+        <source>Batch Copy Hotkey</source>
+        <translation>일괄 복사 단축키</translation>
+    </message>
+    <message>
+        <source>Copies the latest screenshots (the default count above) to the clipboard. Default: Ctrl+Shift+V.</source>
+        <translation>최신 스크린샷(위의 기본 수량)을 클립보드에 복사합니다. 기본값: Ctrl+Shift+V.</translation>
+    </message>
+    <message>
+        <source>Copy Latest 5</source>
+        <translation>최신 5장 복사</translation>
+    </message>
+    <message>
+        <source>Copy Latest 10</source>
+        <translation>최신 10장 복사</translation>
+    </message>
+    <message>
+        <source>Copy Latest 15</source>
+        <translation>최신 15장 복사</translation>
+    </message>
+    <message>
+        <source>Copy Latest 20</source>
+        <translation>최신 20장 복사</translation>
+    </message>
+    <message>
+        <source>Optional hotkey, empty by default.</source>
+        <translation>선택 사항인 단축키입니다. 기본값은 비어 있습니다.</translation>
+    </message>
+    <message>
+        <source>Copy Selected</source>
+        <translation>선택 항목 복사</translation>
+    </message>
+    <message>
+        <source>Copies the screenshots selected in the Recent Screenshots window. Optional, empty by default.</source>
+        <translation>'최근 스크린샷' 창에서 선택한 항목을 복사합니다. 선택 사항, 기본값은 비어 있습니다.</translation>
+    </message>
+    <message>
+        <source>This key combination is invalid or reserved by the system.</source>
+        <translation>이 키 조합은 올바르지 않거나 시스템에서 예약되어 있습니다.</translation>
+    </message>
+    <message>
+        <source>Already used by: </source>
+        <translation>이미 사용 중: </translation>
+    </message>
+    <message>
+        <source>Screenshot Folder</source>
+        <translation>스크린샷 폴더</translation>
+    </message>
+    <message>
+        <source>Batch copy uses the screenshots jietuba saves automatically to this folder. Change it on the Screenshot page.</source>
+        <translation>일괄 복사는 jietuba가 이 폴더에 자동 저장한 이미지를 사용합니다. 변경은 '스크린샷' 페이지에서 하세요.</translation>
+    </message>
+    <message>
+        <source>Automatic Saving</source>
+        <translation>자동 저장</translation>
+    </message>
+    <message>
+        <source>Automatic screenshot saving is on.</source>
+        <translation>스크린샷 자동 저장이 켜져 있습니다.</translation>
+    </message>
+    <message>
+        <source>Automatic screenshot saving is OFF. Batch copy needs the saved screenshot files: turn on auto-save on the Screenshot page. Nothing was changed for you.</source>
+        <translation>스크린샷 자동 저장이 꺼져 있습니다. 일괄 복사에는 저장된 파일이 필요합니다. '스크린샷' 페이지에서 자동 저장을 켜 주세요. 설정은 변경하지 않았습니다.</translation>
+    </message>
+    <message>
+        <source>Extra Folders</source>
+        <translation>추가 폴더</translation>
+    </message>
+    <message>
+        <source>None. Screenshots saved elsewhere can be added here.</source>
+        <translation>없음. 다른 곳에 저장된 스크린샷은 여기에 추가할 수 있습니다.</translation>
+    </message>
+    <message>
+        <source>Add Folder</source>
+        <translation>폴더 추가</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>지우기</translation>
+    </message>
+    <message>
+        <source>Choose a screenshot folder</source>
+        <translation>스크린샷 폴더 선택</translation>
+    </message>
+</context>
 </TS>
