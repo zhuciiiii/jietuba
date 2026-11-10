@@ -96,6 +96,7 @@ private slots:
         QCOMPARE(result.count, 10);
         QCOMPARE(read_clipboard_files(), files);
         QCOMPARE(read_clipboard_drop_effect(), 1); // copy, never move
+        QCOMPARE(read_clipboard_history_flag(), 0); // keeps the batch out of the clipboard history
         for (const auto &file : files) QCOMPARE(sha(file), hashes[file]); // originals untouched
 
         // A second copy replaces the first one completely.

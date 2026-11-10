@@ -27,5 +27,7 @@ ClipboardResult copy_files_to_clipboard(const QStringList &paths);
 QStringList read_clipboard_files();
 // The "Preferred DropEffect" value, or -1 when absent.
 int read_clipboard_drop_effect();
+// The "CanIncludeInClipboardHistory" value (0 = not recorded in history), or -1 when absent.
+int read_clipboard_history_flag();
 
 }

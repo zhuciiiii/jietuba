@@ -62,6 +62,11 @@ UINT drop_effect_format() {
     return format;
 }
 
+UINT history_flag_format() {
+    static const UINT format = RegisterClipboardFormatW(L"CanIncludeInClipboardHistory");
+    return format;
+}
+
 HGLOBAL make_global(const void *bytes, size_t size) {
     HGLOBAL handle = GlobalAlloc(GMEM_MOVEABLE | GMEM_ZEROINIT, size);
     if (!handle) return nullptr;
@@ -94,15 +99,21 @@ ClipboardResult copy_files_to_clipboard(const QStringList &paths) {
     HGLOBAL drop = make_global(dropfiles.constData(), static_cast<size_t>(dropfiles.size()));
     const DWORD copy_effect = 1; // DROPEFFECT_COPY
     HGLOBAL effect = make_global(&copy_effect, sizeof(copy_effect));
-    if (!drop || !effect) {
+    // 0 = do not record this in clipboard history. The batch is made from history and saved files already; recording it
+    // would put the batch itself at the top of the history, and the next batch copy would count it again.
+    const DWORD no_history = 0;
+    HGLOBAL history_flag = make_global(&no_history, sizeof(no_history));
+    if (!drop || !effect || !history_flag) {
         if (drop) GlobalFree(drop);
         if (effect) GlobalFree(effect);
+        if (history_flag) GlobalFree(history_flag);
         result.error = "Out of memory.";
         return result;
     }
     if (!open_clipboard_with_retry()) {
         GlobalFree(drop);
         GlobalFree(effect);
+        GlobalFree(history_flag);
         result.error = QString("The clipboard is in use by another program (error %1).").arg(GetLastError());
         return result;
     }
@@ -113,12 +124,14 @@ ClipboardResult copy_files_to_clipboard(const QStringList &paths) {
     } else {
         drop = nullptr; // owned by the system now
         if (SetClipboardData(drop_effect_format(), effect)) effect = nullptr; // non-fatal: paste defaults to copy
+        if (SetClipboardData(history_flag_format(), history_flag)) history_flag = nullptr; // non-fatal: history may record it
         result.ok = true;
         result.count = static_cast<int>(paths.size());
     }
     CloseClipboard();
     if (drop) GlobalFree(drop);
     if (effect) GlobalFree(effect);
+    if (history_flag) GlobalFree(history_flag);
     return result;
 }
 
@@ -136,6 +149,23 @@ QStringList read_clipboard_files() {
     }
     CloseClipboard();
     return files;
+}
+
+int read_clipboard_history_flag() {
+    if (!open_clipboard_with_retry()) return -1;
+    int value = -1;
+    if (IsClipboardFormatAvailable(history_flag_format())) {
+        if (HANDLE handle = GetClipboardData(history_flag_format())) {
+            if (const void *data = GlobalLock(handle)) {
+                DWORD flag = 0;
+                std::memcpy(&flag, data, sizeof(flag));
+                value = static_cast<int>(flag);
+                GlobalUnlock(handle);
+            }
+        }
+    }
+    CloseClipboard();
+    return value;
 }
 
 int read_clipboard_drop_effect() {
@@ -158,6 +188,7 @@ int read_clipboard_drop_effect() {
 ClipboardResult copy_files_to_clipboard(const QStringList &) { return {false, 0, "Windows only."}; }
 QStringList read_clipboard_files() { return {}; }
 int read_clipboard_drop_effect() { return -1; }
+int read_clipboard_history_flag() { return -1; }
 #endif
 
 }
