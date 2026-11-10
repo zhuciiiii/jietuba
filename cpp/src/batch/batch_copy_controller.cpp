@@ -27,7 +27,6 @@ const HotkeyDef HOTKEYS[] = {
     {"batch_hotkey", "Batch Copy (default count)", 0}, {"batch_hotkey_5", "Batch Copy Latest 5", 5},
     {"batch_hotkey_10", "Batch Copy Latest 10", 10},   {"batch_hotkey_15", "Batch Copy Latest 15", 15},
     {"batch_hotkey_20", "Batch Copy Latest 20", 20},   {"batch_hotkey_selected", "Batch Copy Selected", -1},
-    {"batch_hotkey_history", "Copy Latest 5 History Items", -2},
 };
 
 QString normalized(const QString &hotkey) { return hotkey.trimmed().toLower(); }
@@ -38,6 +37,7 @@ QString function_label(const QString &function) {
     if (function == "pin_clipboard") return tr_text("Pin Clipboard Image");
     if (function == "translation") return tr_text("Translation");
     if (function == "screen_annotation") return tr_text("Screen Annotation");
+    if (function == "batch_history") return tr_text("Copy Latest History Items");
     return function;
 }
 }
@@ -164,6 +164,7 @@ QStringList BatchCopyController::history_item_files(const clipboard::ClipboardIt
 }
 
 CopyOutcome BatchCopyController::copy_latest_history_files(int count) {
+    if (count <= 0) count = std::clamp(config_->get_batch_history_count(), 1, 50); // 0 = the setting
     if (!master_enabled()) return finish({false, 0, tr_text("Batch copy is turned off. Turn on its master switch first.")});
     auto &manager = clipboard::ClipboardManager::instance();
     const QString images_dir = manager.get_images_dir().value_or(QString());
@@ -189,7 +190,6 @@ std::vector<HotkeyBinding> BatchCopyController::hotkey_bindings() {
         std::function<void()> callback;
         if (def.count > 0) callback = [this, n = def.count] { copy_latest(n); };
         else if (def.count == 0) callback = [this] { copy_default(); };
-        else if (def.count == -2) callback = [this] { copy_latest_history_files(5); };
         else callback = [this] { copy_selected(); };
         bindings.push_back({def.setting, tr_text(def.label), hotkey, callback});
     }

@@ -254,6 +254,7 @@ const std::vector<GlobalHotkeyFunction> &GLOBAL_HOTKEY_FUNCTIONS() {
         {"pin_clipboard", "pin_clipboard_hotkey", "clipboard/pin_hotkey"},
         {"translation", "translation_hotkey", "app/translation_hotkey"},
         {"screen_annotation", "screen_annotation_hotkey", "app/screen_annotation_hotkey"},
+        {"batch_history", "batch_hotkey_history", "batch/hotkey_history"},
     };
     return functions;
 }

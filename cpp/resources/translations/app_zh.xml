@@ -7807,15 +7807,15 @@ Replace it?</source>
 <context>
     <name>GroupBar</name>
     <message>
-        <source>Multi-select: mark the latest 5 and copy them as separate files</source>
-        <translation>多选：标记最近 5 项，并作为独立文件复制</translation>
+        <source>Multi-select: mark the latest clipboard items and copy them as separate files</source>
+        <translation>多选：标记剪贴板里最近的几项，并作为独立文件复制</translation>
     </message>
 </context>
 <context>
     <name>BatchCopy</name>
     <message>
-        <source>Copy Latest 5 History Items</source>
-        <translation>复制剪贴板历史最近 5 项</translation>
+        <source>Copy Latest History Items</source>
+        <translation>复制剪贴板历史最近几项</translation>
     </message>
     <message>
         <source>The clipboard history has no images or files to copy.</source>
@@ -7825,12 +7825,23 @@ Replace it?</source>
 <context>
     <name>SettingsDialog</name>
     <message>
-        <source>Copy Latest 5 History Items</source>
-        <translation>复制剪贴板历史最近 5 项</translation>
+        <source>Copy Latest History Items</source>
+        <translation>复制剪贴板历史最近几项</translation>
     </message>
     <message>
         <source>Marks the latest 5 image or file items of the clipboard history and copies them as separate files, like the multi-select button of the clipboard window. Default: Ctrl+0.</source>
         <translation>标记剪贴板历史里最近 5 个图片或文件项，并作为独立文件复制，和剪贴板窗口的多选按钮一样。默认：Ctrl+0。</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsDialog</name>
+    <message>
+        <source>History Items to Copy</source>
+        <translation>复制剪贴板历史的数量</translation>
+    </message>
+    <message>
+        <source>How many of the newest clipboard history images or files the multi-select button and its hotkey copy.</source>
+        <translation>剪贴板窗口的多选按钮和对应快捷键一次复制多少个最新的历史图片或文件。</translation>
     </message>
 </context>
 </TS>

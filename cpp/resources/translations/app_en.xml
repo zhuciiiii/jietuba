@@ -7755,15 +7755,15 @@ Replace it?</translation>
 <context>
     <name>GroupBar</name>
     <message>
-        <source>Multi-select: mark the latest 5 and copy them as separate files</source>
-        <translation>Multi-select: mark the latest 5 and copy them as separate files</translation>
+        <source>Multi-select: mark the latest clipboard items and copy them as separate files</source>
+        <translation>Multi-select: mark the latest clipboard items and copy them as separate files</translation>
     </message>
 </context>
 <context>
     <name>BatchCopy</name>
     <message>
-        <source>Copy Latest 5 History Items</source>
-        <translation>Copy Latest 5 History Items</translation>
+        <source>Copy Latest History Items</source>
+        <translation>Copy Latest History Items</translation>
     </message>
     <message>
         <source>The clipboard history has no images or files to copy.</source>
@@ -7773,12 +7773,23 @@ Replace it?</translation>
 <context>
     <name>SettingsDialog</name>
     <message>
-        <source>Copy Latest 5 History Items</source>
-        <translation>Copy Latest 5 History Items</translation>
+        <source>Copy Latest History Items</source>
+        <translation>Copy Latest History Items</translation>
     </message>
     <message>
         <source>Marks the latest 5 image or file items of the clipboard history and copies them as separate files, like the multi-select button of the clipboard window. Default: Ctrl+0.</source>
         <translation>Marks the latest 5 image or file items of the clipboard history and copies them as separate files, like the multi-select button of the clipboard window. Default: Ctrl+0.</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsDialog</name>
+    <message>
+        <source>History Items to Copy</source>
+        <translation>History Items to Copy</translation>
+    </message>
+    <message>
+        <source>How many of the newest clipboard history images or files the multi-select button and its hotkey copy.</source>
+        <translation>How many of the newest clipboard history images or files the multi-select button and its hotkey copy.</translation>
     </message>
 </context>
 </TS>

@@ -88,6 +88,7 @@ const std::vector<GlobalRow> &GLOBAL_HOTKEY_ROWS() {
         {"clipboard", "clipboard_hotkey_edit", "Clipboard", "clipboard", FluentIcon::Paste},
         {"translation", "translation_hotkey_edit", "Translation", "translate", FluentIcon::Language},
         {"screen_annotation", "screen_annotation_hotkey_edit", "Screen Annotation", "capture", FluentIcon::Brush},
+        {"batch_history", "batch_history_hotkey_edit", "Batch Copy", "clipboard", FluentIcon::Save},
     };
     return rows;
 }

@@ -187,7 +187,7 @@ QPushButton *GroupBar::create_close_btn() {
 QPushButton *GroupBar::create_multi_btn() {
     auto *btn = new QPushButton(this);
     btn->setCursor(Qt::PointingHandCursor);
-    btn->setToolTip(tr_text("Multi-select: mark the latest 5 and copy them as separate files"));
+    btn->setToolTip(tr_text("Multi-select: mark the latest clipboard items and copy them as separate files"));
     btn->setFocusPolicy(Qt::NoFocus);
     connect(btn, &QPushButton::clicked, this, &GroupBar::multi_select_requested);
     return btn;

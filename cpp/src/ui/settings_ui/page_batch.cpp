@@ -37,7 +37,6 @@ const HotkeyRow HOTKEY_ROWS[] = {
     {"batch_hotkey_10", "Copy Latest 10", "Optional hotkey, empty by default."},
     {"batch_hotkey_15", "Copy Latest 15", "Optional hotkey, empty by default."},
     {"batch_hotkey_20", "Copy Latest 20", "Optional hotkey, empty by default."},
-    {"batch_hotkey_history", "Copy Latest 5 History Items", "Marks the latest 5 image or file items of the clipboard history and copies them as separate files, like the multi-select button of the clipboard window. Default: Ctrl+0."},
     {"batch_hotkey_selected", "Copy Selected", "Copies the screenshots selected in the Recent Screenshots window. Optional, empty by default."},
 };
 
@@ -94,6 +93,9 @@ void build_main_section(SettingsDialog *dialog, SettingsCardGroup *group) {
                config->get_batch_notifications(), [config](bool on) { config->set_batch_notifications(on); });
     add_count_combo(dialog, group, "Default Batch Size", "How many screenshots the main hotkey and the tray entry copy.", {5, 10, 15, 20},
                     config->get_batch_default_count(), [config](int n) { config->set_batch_default_count(n); });
+    add_count_combo(dialog, group, "History Items to Copy",
+                    "How many of the newest clipboard history images or files the multi-select button and its hotkey copy.", {1, 2, 3, 5, 10, 15, 20},
+                    config->get_batch_history_count(), [config](int n) { config->set_batch_history_count(n); });
     add_count_combo(dialog, group, "Recent Screenshot History", "How many recent screenshots the window lists.", {20, 50, 100, 200},
                     config->get_batch_history_limit(), [config](int n) { config->set_batch_history_limit(n); });
 

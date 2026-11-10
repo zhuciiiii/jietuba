@@ -149,9 +149,8 @@ private slots:
 
         controller.set_master_enabled(true);
         QVERIFY(controller.watching());
-        QCOMPARE(controller.hotkey_bindings().size(), size_t(2)); // Ctrl+Shift+V and Ctrl+0 by default
+        QCOMPARE(controller.hotkey_bindings().size(), size_t(1)); // only Ctrl+Shift+V here; Ctrl+0 is a global hotkey of the Shortcuts page
         QCOMPARE(controller.hotkey_bindings().front().hotkey, QString("ctrl+shift+v"));
-        QCOMPARE(controller.hotkey_bindings().back().hotkey, QString("ctrl+0"));
         const auto on = controller.copy_latest(10);
         QVERIFY2(on.ok, qPrintable(on.message));
         QCOMPARE(on.count, 10);
@@ -200,6 +199,21 @@ private slots:
         QVERIFY(!BatchCopyController::hotkey_conflicts(&config, "batch_hotkey_15", "ctrl+alt+9").isEmpty());
         QVERIFY(BatchCopyController::hotkey_conflicts(&config, "batch_hotkey_10", "ctrl+alt+9").isEmpty()); // itself
         QCOMPARE(BatchCopyController::hotkey_conflicts(&config, "batch_hotkey", "v"), QStringList{"!"}); // no modifier
+    }
+
+    void historyHotkeyIsAGlobalHotkeyOfTheShortcutsPage() {
+        QSettings stored(settings_file_, QSettings::IniFormat);
+        ToolSettingsManager config(stored);
+        const auto keys = config.get_global_hotkeys("batch_history");
+        QCOMPARE(keys.size(), GLOBAL_HOTKEY_SLOTS);
+        QCOMPARE(keys.first(), QString("ctrl+0"));
+        QVERIFY(keys.mid(1).join("").isEmpty());
+        QCOMPARE(config.get_batch_history_count(), 5); // default count
+        config.set_global_hotkeys("batch_history", {"ctrl+9", "", "", ""});
+        QCOMPARE(config.get_global_hotkeys("batch_history").first(), QString("ctrl+9"));
+        // The other batch hotkeys see it as taken.
+        QVERIFY(!BatchCopyController::hotkey_conflicts(&config, "batch_hotkey_5", "ctrl+9").isEmpty());
+        QVERIFY(BatchCopyController::hotkey_conflicts(&config, "batch_hotkey_5", "ctrl+0").isEmpty());
     }
 
     void explainsWhenAutoSaveIsOffWithoutChangingIt() {

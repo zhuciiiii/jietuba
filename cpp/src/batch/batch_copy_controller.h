@@ -55,8 +55,9 @@ public:
     void set_selection(const QStringList &paths) { selection_ = paths; }
     QStringList selection() const { return selection_; }
     CopyOutcome copy_selected();
-    // The newest `count` image or file items of the clipboard history, copied as separate files.
-    CopyOutcome copy_latest_history_files(int count);
+    // The newest `count` image or file items of the clipboard history, copied as separate files; 0 means the
+    // "History Items to Copy" setting.
+    CopyOutcome copy_latest_history_files(int count = 0);
     // The files behind one clipboard history item: its stored PNG for an image, the listed paths for a file item;
     // only files that exist. Empty for text and other items.
     static QStringList history_item_files(const clipboard::ClipboardItem &item, const QString &images_dir);

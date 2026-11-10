@@ -611,7 +611,7 @@ void ClipboardWindow::setup_ui() {
 
     group_bar = new GroupBar(controller, &manager, current_theme, group_bar_position, this);
     connect(group_bar, &GroupBar::close_requested, this, [this] { close(); });
-    connect(group_bar, &GroupBar::multi_select_requested, this, [this] { mark_and_copy_latest(5); });
+    connect(group_bar, &GroupBar::multi_select_requested, this, [this] { mark_and_copy_latest(std::clamp(config->get_batch_history_count(), 1, 50)); });
     connect(group_bar, &GroupBar::group_switched, this, [this](std::optional<qint64> group_id) { on_group_switched(group_id); });
     connect(group_bar, &GroupBar::manage_groups_requested, this, [this] { on_add_group_clicked(); });
     connect(group_bar, &GroupBar::manage_items_requested, this, [this] { on_add_item_clicked(); });

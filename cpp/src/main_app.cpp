@@ -296,6 +296,9 @@ void MainApp::update_hotkey(bool show_error) {
     // Pinning prefers the system clipboard's image, so it is useful with history turned off.
     functions.emplace_back("pin_clipboard", tr_text("Pin Clipboard Image"), [this] { pin_clipboard_image(); });
     functions.emplace_back("screen_annotation", tr_text("Screen Annotation"), [this] { toggle_screen_annotation(); });
+    // Batch copy of the latest clipboard-history images: none of its hotkeys exist while its master switch or hotkey switch is off.
+    if (batch_copy->master_enabled() && config_manager->get_batch_hotkey_enabled())
+        functions.emplace_back("batch_history", tr_text("Batch Copy"), [this] { batch_copy->copy_latest_history_files(0); });
 
     std::vector<std::pair<QString, QString>> failed_hotkeys;
     for (const auto &[function, label, callback] : functions) {

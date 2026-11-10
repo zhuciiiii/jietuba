@@ -7808,15 +7808,15 @@ Replace it?</source>
 <context>
     <name>GroupBar</name>
     <message>
-        <source>Multi-select: mark the latest 5 and copy them as separate files</source>
-        <translation>다중 선택: 최근 5개 항목을 표시하고 개별 파일로 복사합니다</translation>
+        <source>Multi-select: mark the latest clipboard items and copy them as separate files</source>
+        <translation>다중 선택: 최근 클립보드 항목을 표시하고 개별 파일로 복사합니다</translation>
     </message>
 </context>
 <context>
     <name>BatchCopy</name>
     <message>
-        <source>Copy Latest 5 History Items</source>
-        <translation>클립보드 기록 최근 5개 복사</translation>
+        <source>Copy Latest History Items</source>
+        <translation>클립보드 기록 최근 항목 복사</translation>
     </message>
     <message>
         <source>The clipboard history has no images or files to copy.</source>
@@ -7826,12 +7826,23 @@ Replace it?</source>
 <context>
     <name>SettingsDialog</name>
     <message>
-        <source>Copy Latest 5 History Items</source>
-        <translation>클립보드 기록 최근 5개 복사</translation>
+        <source>Copy Latest History Items</source>
+        <translation>클립보드 기록 최근 항목 복사</translation>
     </message>
     <message>
         <source>Marks the latest 5 image or file items of the clipboard history and copies them as separate files, like the multi-select button of the clipboard window. Default: Ctrl+0.</source>
         <translation>클립보드 기록의 최근 이미지·파일 5개를 표시하고 개별 파일로 복사합니다(클립보드 창의 다중 선택 버튼과 동일). 기본값: Ctrl+0.</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsDialog</name>
+    <message>
+        <source>History Items to Copy</source>
+        <translation>복사할 기록 개수</translation>
+    </message>
+    <message>
+        <source>How many of the newest clipboard history images or files the multi-select button and its hotkey copy.</source>
+        <translation>클립보드 창의 다중 선택 버튼과 해당 단축키가 복사하는 최신 이미지·파일 수입니다.</translation>
     </message>
 </context>
 </TS>
