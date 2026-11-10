@@ -8185,4 +8185,33 @@ Replace it?</source>
         <translation>選擇截圖資料夾</translation>
     </message>
 </context>
+<context>
+    <name>GroupBar</name>
+    <message>
+        <source>Multi-select: mark the latest 5 and copy them as separate files</source>
+        <translation>多選：標記最近 5 項，並作為獨立檔案複製</translation>
+    </message>
+</context>
+<context>
+    <name>BatchCopy</name>
+    <message>
+        <source>Copy Latest 5 History Items</source>
+        <translation>複製剪貼簿歷史最近 5 項</translation>
+    </message>
+    <message>
+        <source>The clipboard history has no images or files to copy.</source>
+        <translation>剪貼簿歷史中沒有可複製的圖片或檔案。</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsDialog</name>
+    <message>
+        <source>Copy Latest 5 History Items</source>
+        <translation>複製剪貼簿歷史最近 5 項</translation>
+    </message>
+    <message>
+        <source>Marks the latest 5 image or file items of the clipboard history and copies them as separate files, like the multi-select button of the clipboard window. Default: Ctrl+0.</source>
+        <translation>標記剪貼簿歷史中最近 5 個圖片或檔案項，並作為獨立檔案複製，與剪貼簿視窗的多選按鈕相同。預設：Ctrl+0。</translation>
+    </message>
+</context>
 </TS>

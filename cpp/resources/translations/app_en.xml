@@ -7752,4 +7752,33 @@ Replace it?</translation>
         <translation>Choose a screenshot folder</translation>
     </message>
 </context>
+<context>
+    <name>GroupBar</name>
+    <message>
+        <source>Multi-select: mark the latest 5 and copy them as separate files</source>
+        <translation>Multi-select: mark the latest 5 and copy them as separate files</translation>
+    </message>
+</context>
+<context>
+    <name>BatchCopy</name>
+    <message>
+        <source>Copy Latest 5 History Items</source>
+        <translation>Copy Latest 5 History Items</translation>
+    </message>
+    <message>
+        <source>The clipboard history has no images or files to copy.</source>
+        <translation>The clipboard history has no images or files to copy.</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsDialog</name>
+    <message>
+        <source>Copy Latest 5 History Items</source>
+        <translation>Copy Latest 5 History Items</translation>
+    </message>
+    <message>
+        <source>Marks the latest 5 image or file items of the clipboard history and copies them as separate files, like the multi-select button of the clipboard window. Default: Ctrl+0.</source>
+        <translation>Marks the latest 5 image or file items of the clipboard history and copies them as separate files, like the multi-select button of the clipboard window. Default: Ctrl+0.</translation>
+    </message>
+</context>
 </TS>

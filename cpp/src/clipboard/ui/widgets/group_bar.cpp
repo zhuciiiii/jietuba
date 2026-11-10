@@ -65,6 +65,7 @@ GroupBar::GroupBar(ClipboardController *controller, ClipboardManager *manager, c
     setAttribute(Qt::WA_StyledBackground, true);
     // Shared buttons are created once and survive layout rebuilds.
     close_btn = create_close_btn();
+    multi_btn = create_multi_btn();
     clipboard_btn = create_clipboard_btn();
     add_group_btn = create_add_group_btn();
     bar_widget = this;
@@ -121,12 +122,13 @@ void GroupBar::apply_button_look() {
     }
     const QString icon_style = icon_btn_style();
     const QSize icon_size(scaled(14), scaled(14));
-    for (auto *btn : {close_btn, add_group_btn}) {
+    for (auto *btn : {close_btn, multi_btn, add_group_btn}) {
         btn->setFixedSize(cell);
         btn->setStyleSheet(icon_style);
         btn->setIconSize(icon_size);
     }
     close_btn->setIcon(tinted_icon(FluentIcon::Cancel, colors.text_secondary));
+    multi_btn->setIcon(tinted_icon(FluentIcon::Check, colors.text_secondary));
     // Accent colored and larger than close: the plus is how most people find out groups exist.
     add_group_btn->setIconSize(QSize(scaled(18), scaled(18)));
     add_group_btn->setIcon(tinted_icon(ResourceManager::get_icon_path("add.svg"), colors.accent_primary));
@@ -182,6 +184,15 @@ QPushButton *GroupBar::create_close_btn() {
     return btn;
 }
 
+QPushButton *GroupBar::create_multi_btn() {
+    auto *btn = new QPushButton(this);
+    btn->setCursor(Qt::PointingHandCursor);
+    btn->setToolTip(tr_text("Multi-select: mark the latest 5 and copy them as separate files"));
+    btn->setFocusPolicy(Qt::NoFocus);
+    connect(btn, &QPushButton::clicked, this, &GroupBar::multi_select_requested);
+    return btn;
+}
+
 GroupButton *GroupBar::create_clipboard_btn() {
     auto *btn = new GroupButton(QString::fromUtf8("📋"), this);
     btn->setCursor(Qt::PointingHandCursor);
@@ -223,7 +234,7 @@ GroupButton *GroupBar::make_group_btn(const Group &group) {
 
 void GroupBar::clear_bar_layout() {
     if (!bar_layout) return;
-    const QList<QWidget *> preserve_widgets{close_btn, clipboard_btn, add_group_btn, group_buttons_widget};
+    const QList<QWidget *> preserve_widgets{close_btn, multi_btn, clipboard_btn, add_group_btn, group_buttons_widget};
     while (bar_layout->count()) {
         QLayoutItem *item = bar_layout->takeAt(0);
         QWidget *widget = item->widget();
@@ -282,9 +293,11 @@ void GroupBar::build_bar() {
         bar_layout->addWidget(group_buttons_widget);
         group_buttons_layout->addWidget(add_group_btn);
         bar_layout->addStretch();
+        bar_layout->addWidget(multi_btn);
         bar_layout->addWidget(close_btn);
     } else {
         bar_layout->addWidget(close_btn);
+        bar_layout->addWidget(multi_btn);
         sep->setFixedHeight(1);
         bar_layout->addWidget(sep);
         bar_layout->addWidget(clipboard_btn);

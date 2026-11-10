@@ -37,6 +37,7 @@ const HotkeyRow HOTKEY_ROWS[] = {
     {"batch_hotkey_10", "Copy Latest 10", "Optional hotkey, empty by default."},
     {"batch_hotkey_15", "Copy Latest 15", "Optional hotkey, empty by default."},
     {"batch_hotkey_20", "Copy Latest 20", "Optional hotkey, empty by default."},
+    {"batch_hotkey_history", "Copy Latest 5 History Items", "Marks the latest 5 image or file items of the clipboard history and copies them as separate files, like the multi-select button of the clipboard window. Default: Ctrl+0."},
     {"batch_hotkey_selected", "Copy Selected", "Copies the screenshots selected in the Recent Screenshots window. Optional, empty by default."},
 };
 

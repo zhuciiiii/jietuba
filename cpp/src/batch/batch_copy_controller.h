@@ -5,6 +5,7 @@
 // refused without touching the clipboard. Turning the switch on or off only affects this module; jietuba's own
 // screenshot, clipboard history and hotkeys are neither started nor stopped by it.
 #include "batch/recent_screenshots.h"
+#include "clipboard/core/models.h"
 #include <QFileSystemWatcher>
 #include <QObject>
 #include <QTimer>
@@ -54,6 +55,11 @@ public:
     void set_selection(const QStringList &paths) { selection_ = paths; }
     QStringList selection() const { return selection_; }
     CopyOutcome copy_selected();
+    // The newest `count` image or file items of the clipboard history, copied as separate files.
+    CopyOutcome copy_latest_history_files(int count);
+    // The files behind one clipboard history item: its stored PNG for an image, the listed paths for a file item;
+    // only files that exist. Empty for text and other items.
+    static QStringList history_item_files(const clipboard::ClipboardItem &item, const QString &images_dir);
 
     // Hotkeys to register: empty unless the master switch and the hotkey switch are on.
     std::vector<HotkeyBinding> hotkey_bindings();

@@ -342,6 +342,8 @@ SETTING(batch_hotkey_5, "batch/hotkey_5", QString, "", Import, Gen, Gen)
 SETTING(batch_hotkey_10, "batch/hotkey_10", QString, "", Import, Gen, Gen)
 SETTING(batch_hotkey_15, "batch/hotkey_15", QString, "", Import, Gen, Gen)
 SETTING(batch_hotkey_20, "batch/hotkey_20", QString, "", Import, Gen, Gen)
+// Clipboard-history version: the latest 5 image/file items of the clipboard history, copied as separate files.
+SETTING(batch_hotkey_history, "batch/hotkey_history", QString, "ctrl+0", Import, Gen, Gen)
 SETTING(batch_hotkey_selected, "batch/hotkey_selected", QString, "", Import, Gen, Gen)
 // Extra folders besides the screenshot save folder; absolute paths, so they stay on this computer.
 SETTING(batch_extra_folders, "batch/extra_folders", QStringList, {}, Local, Gen, Gen)

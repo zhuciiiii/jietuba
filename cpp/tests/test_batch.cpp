@@ -104,6 +104,25 @@ private slots:
         QCOMPARE(read_clipboard_files(), second);
     }
 
+    void historyItemsMapToTheirFiles() {
+        QDir dir(dir_.path());
+        const QString png = make_png(dir, "abc123.png", QDateTime::currentDateTime());
+        clipboard::ClipboardItem image;
+        image.content_type = "image";
+        image.image_id = QString("abc123");
+        QCOMPARE(BatchCopyController::history_item_files(image, dir_.path()), QStringList{png});
+        image.image_id = QString("missing");
+        QVERIFY(BatchCopyController::history_item_files(image, dir_.path()).isEmpty());
+        clipboard::ClipboardItem files;
+        files.content_type = "file";
+        files.content = QString("{\"files\": [\"%1\", \"%2\"]}").arg(QString(png).replace("\\", "\\\\"), "C:\no\such.png");
+        QCOMPARE(BatchCopyController::history_item_files(files, dir_.path()), QStringList{png});
+        clipboard::ClipboardItem text;
+        text.content_type = "text";
+        text.content = "hello";
+        QVERIFY(BatchCopyController::history_item_files(text, dir_.path()).isEmpty());
+    }
+
     void emptyListIsRefused() {
         QVERIFY(!copy_files_to_clipboard({}).ok);
     }
@@ -130,8 +149,9 @@ private slots:
 
         controller.set_master_enabled(true);
         QVERIFY(controller.watching());
-        QCOMPARE(controller.hotkey_bindings().size(), size_t(1)); // only Ctrl+Shift+V by default
+        QCOMPARE(controller.hotkey_bindings().size(), size_t(2)); // Ctrl+Shift+V and Ctrl+0 by default
         QCOMPARE(controller.hotkey_bindings().front().hotkey, QString("ctrl+shift+v"));
+        QCOMPARE(controller.hotkey_bindings().back().hotkey, QString("ctrl+0"));
         const auto on = controller.copy_latest(10);
         QVERIFY2(on.ok, qPrintable(on.message));
         QCOMPARE(on.count, 10);

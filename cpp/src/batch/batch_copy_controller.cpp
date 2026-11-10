@@ -1,11 +1,15 @@
 #include "batch/batch_copy_controller.h"
 #include "batch/batch_clipboard.h"
+#include "clipboard/core/manager.h"
 #include "core/clipboard_utils.h"
 #include "core/global_hotkey.h"
 #include "core/i18n.h"
 #include "core/logger.h"
 #include "settings/tool_settings.h"
 #include <QDir>
+#include <QJsonArray>
+#include <QJsonDocument>
+#include <QJsonObject>
 #include <QFileInfo>
 #include <QSet>
 #include <algorithm>
@@ -23,6 +27,7 @@ const HotkeyDef HOTKEYS[] = {
     {"batch_hotkey", "Batch Copy (default count)", 0}, {"batch_hotkey_5", "Batch Copy Latest 5", 5},
     {"batch_hotkey_10", "Batch Copy Latest 10", 10},   {"batch_hotkey_15", "Batch Copy Latest 15", 15},
     {"batch_hotkey_20", "Batch Copy Latest 20", 20},   {"batch_hotkey_selected", "Batch Copy Selected", -1},
+    {"batch_hotkey_history", "Copy Latest 5 History Items", -2},
 };
 
 QString normalized(const QString &hotkey) { return hotkey.trimmed().toLower(); }
@@ -145,6 +150,36 @@ CopyOutcome BatchCopyController::copy_paths(const QStringList &paths) {
     return finish({true, result.count, tr_text("%1 screenshots copied. Press Ctrl+V to paste.").arg(result.count)});
 }
 
+QStringList BatchCopyController::history_item_files(const clipboard::ClipboardItem &item, const QString &images_dir) {
+    QStringList files;
+    if (item.content_type == "image" && item.image_id && !item.image_id->isEmpty() && !images_dir.isEmpty()) {
+        files << QDir(images_dir).filePath(*item.image_id + ".png");
+    } else if (item.content_type == "file") {
+        for (const auto &entry : QJsonDocument::fromJson(item.content.toUtf8()).object().value("files").toArray()) files << entry.toString();
+    }
+    QStringList existing;
+    for (const auto &file : files)
+        if (!file.isEmpty() && QFileInfo::exists(file)) existing << QDir::toNativeSeparators(file);
+    return existing;
+}
+
+CopyOutcome BatchCopyController::copy_latest_history_files(int count) {
+    if (!master_enabled()) return finish({false, 0, tr_text("Batch copy is turned off. Turn on its master switch first.")});
+    auto &manager = clipboard::ClipboardManager::instance();
+    const QString images_dir = manager.get_images_dir().value_or(QString());
+    QStringList paths;
+    int items = 0;
+    for (const auto &item : manager.get_history(0, 200)) {
+        if (items >= count) break;
+        const auto files = history_item_files(item, images_dir);
+        if (files.isEmpty()) continue;
+        paths += files;
+        ++items;
+    }
+    if (paths.isEmpty()) return finish({false, 0, tr_text("The clipboard history has no images or files to copy.")});
+    return copy_paths(paths);
+}
+
 std::vector<HotkeyBinding> BatchCopyController::hotkey_bindings() {
     std::vector<HotkeyBinding> bindings;
     if (!master_enabled() || !config_->get_batch_hotkey_enabled()) return bindings;
@@ -154,6 +189,7 @@ std::vector<HotkeyBinding> BatchCopyController::hotkey_bindings() {
         std::function<void()> callback;
         if (def.count > 0) callback = [this, n = def.count] { copy_latest(n); };
         else if (def.count == 0) callback = [this] { copy_default(); };
+        else if (def.count == -2) callback = [this] { copy_latest_history_files(5); };
         else callback = [this] { copy_selected(); };
         bindings.push_back({def.setting, tr_text(def.label), hotkey, callback});
     }

@@ -4,6 +4,7 @@
 #include "clipboard/ui/menus/action_menu.h"
 #include "clipboard/ui/panels/setting_panel.h"
 #include "clipboard/ui/theme/theme_styles.h"
+#include "batch/batch_copy_controller.h"
 #include "clipboard/ui/widgets/group_bar.h"
 #include "clipboard/ui/widgets/item_delegate.h"
 #include "clipboard/ui/widgets/item_drag.h"
@@ -38,6 +39,8 @@
 #include <QMouseEvent>
 #include <QProcess>
 #include <QSaveFile>
+#include <QToolTip>
+#include <algorithm>
 #include <QScreen>
 #include <QScrollBar>
 #include <QStandardPaths>
@@ -608,6 +611,7 @@ void ClipboardWindow::setup_ui() {
 
     group_bar = new GroupBar(controller, &manager, current_theme, group_bar_position, this);
     connect(group_bar, &GroupBar::close_requested, this, [this] { close(); });
+    connect(group_bar, &GroupBar::multi_select_requested, this, [this] { mark_and_copy_latest(5); });
     connect(group_bar, &GroupBar::group_switched, this, [this](std::optional<qint64> group_id) { on_group_switched(group_id); });
     connect(group_bar, &GroupBar::manage_groups_requested, this, [this] { on_add_group_clicked(); });
     connect(group_bar, &GroupBar::manage_items_requested, this, [this] { on_add_item_clicked(); });
@@ -882,6 +886,27 @@ void ClipboardWindow::on_marks_changed() {
 }
 
 void ClipboardWindow::toggle_item_mark(qint64 item_id) { selection_manager->toggle_mark(item_id); }
+
+void ClipboardWindow::mark_and_copy_latest(int count) {
+    const QString images_dir = manager.get_images_dir().value_or(QString());
+    QList<qint64> ids;
+    QStringList paths;
+    for (int row = 0; row < list_widget->count() && ids.size() < count; ++row) {
+        const qint64 id = list_widget->item(row)->data(Qt::UserRole).toLongLong();
+        const auto item = id ? get_item_data(id) : std::nullopt;
+        if (!item) continue;
+        const QStringList files = batch::BatchCopyController::history_item_files(*item, images_dir);
+        if (files.isEmpty()) continue;
+        ids << id;
+        paths += files;
+    }
+    selection_manager->clear_marks();
+    for (const qint64 id : ids) selection_manager->mark(id);
+    auto *batch = qobject_cast<batch::BatchCopyController *>(qApp->property("_batch_copy_controller").value<QObject *>());
+    if (!batch) return;
+    // No pop-up here. While the Batch Copy master switch is off the copy is refused and the clipboard is left alone.
+    batch->copy_paths(paths);
+}
 
 void ClipboardWindow::mark_items_to(qint64 item_id) { selection_manager->mark_range_to(item_id); }
 

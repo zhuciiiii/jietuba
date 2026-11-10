@@ -63,6 +63,8 @@ public:
     QBoxLayout *group_buttons_layout = nullptr;
     QList<GroupButton *> group_buttons;
     QPushButton *close_btn;
+    // Next to the close button: marks the latest items and copies them as separate files (Recent Screenshot Batch Copy).
+    QPushButton *multi_btn;
     GroupButton *clipboard_btn;
     QPushButton *add_group_btn;
     QString position;
@@ -71,11 +73,13 @@ signals:
     // None means the clipboard history.
     void group_switched(std::optional<qint64> group_id);
     void close_requested();
+    void multi_select_requested();
     void manage_groups_requested();
     void manage_items_requested();
 
 private:
     QPushButton *create_close_btn();
+    QPushButton *create_multi_btn();
     GroupButton *create_clipboard_btn();
     QPushButton *create_add_group_btn();
     GroupButton *make_group_btn(const Group &group);

@@ -138,6 +138,8 @@ public:
     // One row: an image or text to a file named in the save dialog, a file row's files into a folder.
     void save_item_as(qint64 item_id);
     void toggle_item_mark(qint64 item_id);
+    // Marks the newest `count` image or file rows and puts them on the clipboard as separate files (Recent Screenshot Batch Copy).
+    void mark_and_copy_latest(int count);
     void mark_items_to(qint64 item_id);
     // The quick edit key: text opens quick edit, other items in a group open the group editor.
     bool edit_selected();
